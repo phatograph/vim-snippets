@@ -174,7 +174,7 @@ snippet ana
 	accepts_nested_attributes_for :${0:association}
 # ivc == instance variable cache
 snippet ivc
-	@${1:variable_name} ||= ${0:chached_value}
+	@${1:variable_name} ||= ${0:cached_value}
 # include Enumerable
 snippet Enum
 	include Enumerable
@@ -479,6 +479,8 @@ snippet asne
 	assert_not_equal ${1:unexpected}, ${2:actual}
 snippet asid
 	assert_in_delta ${1:expected_float}, ${2:actual_float}, ${3:2 ** -20}
+snippet asi
+	assert_includes ${1:collection}, ${2:object}
 snippet asio
 	assert_instance_of ${1:ExpectedClass}, ${2:actual_instance}
 snippet asko
@@ -620,6 +622,8 @@ snippet asrj
 	assert_rjs :${1:replace}, "${0:dom id}"
 snippet ass assert_select(..)
 	assert_select '${1:path}', :${2:text} => '${3:inner_html' ${4:do}
+snippet ba
+	before_action :${0:method}
 snippet bf
 	before_filter :${0:method}
 snippet bt
@@ -747,8 +751,49 @@ snippet mapwo
 	${1:map}.with_options :${2:controller} => '${3:thing}' do |$3|
 		${0}
 	end
+
+###############################
+#   model callback snippets   #
+###############################
+
+# before callback
+snippet mbv
+	before_validation :${0:method}
+snippet mbc
+	before_create :${0:method}
+snippet mbu
+	before_update :${0:method}
 snippet mbs
 	before_save :${0:method}
+snippet mbd
+	before_destroy :${0:method}
+
+# after callback
+snippet mav
+	after_validation :${0:method}
+snippet maf
+	after_find :${0:method}
+snippet mat
+	after_touch :${0:method}
+snippet macr
+	after_create :${0:method}
+snippet mau
+	after_update :${0:method}
+snippet mas
+	after_save :${0:method}
+snippet mad
+	after_destroy :${0:method}
+
+# around callback
+snippet marc
+	around_create :${0:method}
+snippet maru
+	around_update :${0:method}
+snippet mars
+	around_save :${0:method}
+snippet mard
+	around_destroy :${0:method}
+
 snippet mcht
 	change_table :${1:table_name} do |t|
 		${0}
@@ -985,9 +1030,9 @@ snippet aft
 		${0}
 	end
 snippet let
-	let(:${1:object}) ${0}
+	let(:${1:object}) { ${0} }
 snippet let!
-	let!(:${1:object}) ${0}
+	let!(:${1:object}) { ${0} }
 snippet subj
 	subject { ${0} }
 snippet s.
