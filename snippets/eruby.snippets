@@ -3,6 +3,10 @@
 # Includes html.snippets
 
 # Rails *****************************
+snippet cl
+	:class => '${1}'
+snippet sym
+	:${1} => '${2}'
 snippet rc
 	<% ${0} %>
 snippet rce
@@ -103,6 +107,9 @@ snippet lipp
 	<%= link_to "${1:Link text...}", ${0:model}s_path %>
 snippet lt
 	<%= link_to "${1:name}", ${0:dest} %>
+snippet ltd
+	<%= link_to ${1:dest} do %>
+	<% end %>
 snippet ntc
 	<%= number_to_currency(${1}) %>
 snippet ofcfs
@@ -127,5 +134,7 @@ snippet ife
 	<% else %>
 		${0}
 	<% end %>
+snippet else
+	<% else %>
 snippet pry
 	<% require 'pry'; binding.pry %>
