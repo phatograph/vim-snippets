@@ -2,12 +2,20 @@
 
 snippet '
 	\textquotesingle
+snippet ref
+	\ref{
 snippet c
 	\code{
 snippet cb
 	\begin{lstlisting}
 	${0}
 	\end{lstlisting}
+snippet cbb
+	\begin{minipage}{\linewidth}
+	\begin{lstlisting}[label={lst:label}, caption={}]
+	${0}
+	\end{lstlisting}
+	\end{minipage}
 snippet quote
 	\begin{quotation} \noindent
 	${0}
@@ -80,7 +88,7 @@ snippet eqnarray eqnarray environment
 	\end{eqnarray}
 # Label
 snippet lab \label
-	\label{${1:eq:}${2:fig:}${3:tab:}${0}}
+	\label{${1:eq:}${2:fig}}${0}
 # Enumerate
 snippet enum enumerate environment
 	\begin{enumerate}
@@ -140,7 +148,7 @@ snippet sec* \section*
 	${0}
 # Sub Section
 snippet sub \subsection
-	\subsection*{${1}}
+	\subsection{${1}}
 #	\label{sub:${2:$1}}
 	${0}
 # Sub Section without number
@@ -195,7 +203,7 @@ snippet citep \citep
 snippet citet \citet
 	\citet{${1}} ${0}
 snippet cite \cite[]{}
-	\cite[${1}]{${2}} ${0}
+	\cite[${1}]{${2}}${0}
 snippet citea \citeauthor
 	\citeauthor{${1}} ${0}
 snippet citey \citeyear
@@ -209,8 +217,8 @@ snippet bf bold face text
 	\textbf{${0:text}}
 snippet under underline text
 	\underline{${0:text}}
-snippet emp emphasize text
-	\emph{${0:text}}
+snippet e emphasize text
+	\emph{${1}} ${0}
 snippet sc small caps text
 	\textsc{${0:text}}
 #Choosing font
@@ -219,7 +227,7 @@ snippet sf sans serife text
 snippet rm roman font text
 	\textrm{${0:text}}
 snippet tt typewriter (monospace) text
-	\texttt{${0:text}}
+	\texttt{${1}} ${2}
 #misc
 snippet ft \footnote
 	\footnote{${0:text}}
