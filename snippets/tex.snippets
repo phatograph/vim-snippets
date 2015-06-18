@@ -12,7 +12,7 @@ snippet cb
 	\end{lstlisting}
 snippet cbb
 	\begin{minipage}{\linewidth}
-	\begin{lstlisting}[label={lst:label}, caption={}]
+	\begin{lstlisting}[label={lst:${1}}, caption={${2}}]
 	${0}
 	\end{lstlisting}
 	\end{minipage}
@@ -218,7 +218,7 @@ snippet bf bold face text
 snippet under underline text
 	\underline{${0:text}}
 snippet e emphasize text
-	\emph{${1}} ${0}
+	\emph{${1}}${0}
 snippet sc small caps text
 	\textsc{${0:text}}
 #Choosing font
@@ -227,7 +227,7 @@ snippet sf sans serife text
 snippet rm roman font text
 	\textrm{${0:text}}
 snippet tt typewriter (monospace) text
-	\texttt{${1}} ${2}
+	\texttt{
 #misc
 snippet ft \footnote
 	\footnote{${0:text}}
