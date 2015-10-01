@@ -207,8 +207,8 @@ snippet citep \citep
 	\citep{${1}} ${0}
 snippet citet \citet
 	\citet{${1}} ${0}
-snippet cite \cite[]{}
-	\cite[${1}]{${2}}${0}
+snippet cite \cite{}
+	\cite{
 snippet citea \citeauthor
 	\citeauthor{${1}} ${0}
 snippet citey \citeyear
@@ -217,13 +217,13 @@ snippet fcite \footcite[]{}
 	\footcite[${1}]{${2}}${0}
 #Formating text: italic, bold, underline, small capital, emphase ..
 snippet it italic text
-	\textit{${0:text}}
+	\textit{
 snippet bf bold face text
-	\textbf{${0:text}}
+	\textbf{
 snippet under underline text
 	\underline{${0:text}}
 snippet e emphasize text
-	\emph{${1}}${0}
+	\emph{
 snippet sc small caps text
 	\textsc{${0:text}}
 #Choosing font
@@ -298,15 +298,15 @@ snippet col2 two-column environment
 		\end{column}
 	\end{columns}
 #delimiter
-snippet lr( left( right) 
+snippet lr( left( right)
 	\left( ${0} \right)
-snippet lr| left| right| 
+snippet lr| left| right|
 	\left| ${0} \right|
-snippet lr{ left\{ right\} 
+snippet lr{ left\{ right\}
 	\left\\{ ${0} \right\\}
-snippet lr[ left[ right] 
+snippet lr[ left[ right]
 	\left[ ${0} \right]
-snippet lra langle rangle 
+snippet lra langle rangle
 	\langle ${0} \rangle
 
 # Code listings
