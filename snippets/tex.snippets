@@ -3,7 +3,7 @@
 snippet '
 	\textquotesingle
 snippet ref
-	\ref{
+	\ref{sec:${1}}${2}
 snippet c
 	\code{
 snippet cb
@@ -93,7 +93,7 @@ snippet eqnarray eqnarray environment
 	\end{eqnarray}
 # Label
 snippet lab \label
-	\label{${1:eq:}${2:fig}}${0}
+	\label{sec:${1}}
 # Enumerate
 snippet enum enumerate environment
 	\begin{enumerate}
@@ -310,7 +310,7 @@ snippet \{ \{ \}
 #delimiter
 snippet lr left right
 	\left${1} ${0} \right$1
-snippet lr( left( right) 
+snippet lr( left( right)
 	\left( ${0} \right)
 snippet lr| left| right|
 	\left| ${0} \right|
