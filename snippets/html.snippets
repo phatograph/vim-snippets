@@ -1,5 +1,7 @@
 # Some useful Unicode entities
 # Non-Breaking Space
+snippet sty
+	style="${1}"
 snippet nbs
 	&nbsp;
 # ←
@@ -141,13 +143,13 @@ snippet width
 	width="${1}"
 # Elements
 snippet a
-	<a href="${1}">${0}</a>
+	<a href>${1}</a>
 snippet a.
-	<a class="${1}" href="${2:#}">${0:$1}</a>
+	<a class="${1}" href>${2}</a>
 snippet a#
-	<a id="${1}" href="${2:#}">${0:$1}</a>
+	<a id="${1}" href>${1}</a>
 snippet a:ext
-	<a href="http://${1:example.com}">${0:$1}</a>
+	<a href="http://${1:example.com}">${1}</a>
 snippet a:mail
 	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${0:email me}</a>
 snippet ac
@@ -486,6 +488,8 @@ snippet html5l
 	</html>
 snippet i
 	<i>${0}</i>
+snippet i.
+	<i class="${1}">${2}</i>
 snippet iframe
 	<iframe src="${1}" frameborder="0"></iframe>
 snippet iframe.
@@ -553,7 +557,9 @@ snippet kbd
 snippet keygen
 	<keygen>${0}</keygen>
 snippet label
-	<label for="${0:$1}">${1}</label>
+	<label>${0}</label>
+snippet label.
+	<label class="${1}">${2}</label>
 snippet label:i
 	<label for="${2:$1}">${1}</label>
 	<input type="${3:text/submit/hidden/button}" name="${4:$2}" id="${5:$2}" value="${6}" />

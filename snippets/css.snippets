@@ -3,7 +3,7 @@ snippet .
 		${0}
 	}
 snippet !
-	 !important
+	!important
 snippet bdi:m+
 	-moz-border-image: url(${1}) ${2:0} ${3:0} ${4:0} ${5:0} ${6:stretch} ${0:stretch};
 snippet bdi:m
@@ -62,7 +62,7 @@ snippet bgcp:nc
 snippet bgcp:pb
 	background-clip: padding-box;
 snippet bgc
-	background-color: #${0:FFF};
+	background-color: ${0};
 snippet bgc:t
 	background-color: transparent;
 snippet bgi
@@ -154,7 +154,7 @@ snippet bdcl:c
 snippet bdcl:s
 	border-collapse: separate;
 snippet bdc
-	border-color: #${0:000};
+	border-color: ${0};
 snippet bdci
 	border-corner-image: url(${0});
 snippet bdci:c
@@ -332,7 +332,7 @@ snippet cp:a
 snippet cp:r
 	clip: rect(${1:0} ${2:0} ${3:0} ${0:0});
 snippet c
-	color: #${0:000};
+	color: ${0};
 snippet ct
 	content: ${0};
 snippet ct:a
@@ -967,10 +967,12 @@ snippet zoo
 	zoom: 1;
 snippet :h
 	:hover
-snippet :fc
-	:first-child
-snippet :lc
-	:last-child
+snippet fc
+	first-child
+snippet lc
+	last-child
+snippet lot
+	last-of-type
 snippet :nc
 	:nth-child(${0})
 snippet :nlc

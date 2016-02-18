@@ -1,4 +1,29 @@
 #PREAMBLE
+
+snippet '
+	\textquotesingle
+snippet refs
+	\ref{sec:${1}}${2}
+snippet reff
+	\ref{fig:${1}}${2}
+snippet c
+	\code{
+snippet cb
+	\begin{lstlisting}
+	${0}
+	\end{lstlisting}
+snippet cbb
+	\begin{minipage}{\linewidth}
+	\begin{lstlisting}[label={lst:${1}}, caption={${2}}]
+	${0}
+	\end{lstlisting}
+	\end{minipage}
+snippet quote
+	\begin{quotation} \noindent
+	${0}
+	\end{quotation}
+snippet pb
+	\pagebreak
 #newcommand
 snippet nc \newcommand
 	\newcommand{\\${1:cmd}}[${2:opt}]{${3:realcmd}} ${0}
@@ -70,7 +95,7 @@ snippet eqnarray eqnarray environment
 	\end{eqnarray}
 # Label
 snippet lab \label
-	\label{${1:eq:}${2:fig:}${3:tab:}${0}}
+	\label{sec:${1}}
 # Enumerate
 snippet enum enumerate environment
 	\begin{enumerate}
@@ -129,33 +154,32 @@ snippet cha \chapter
 	${0}
 # Section
 snippet sec \section
-	\section{${1:section name}}
-	\label{sec:${2:$1}}
-	${0}
+	\section{${1}}
+#\label{sec:${2:$1}}
 # Section without number
 snippet sec* \section*
-	\section*{${1:section name}}
-	\label{sec:${2:$1}}
+	\section*{${1}}
+#	\label{sec:${2:$1}}
 	${0}
 # Sub Section
 snippet sub \subsection
-	\subsection{${1:subsection name}}
-	\label{sub:${2:$1}}
+	\subsection{${1}}
+#	\label{sub:${2:$1}}
 	${0}
 # Sub Section without number
 snippet sub* \subsection*
-	\subsection*{${1:subsection name}}
-	\label{sub:${2:$1}}
+	\subsection*{${1}}
+#	\label{sub:${2:$1}}
 	${0}
 # Sub Sub Section
 snippet subs \subsubsection
-	\subsubsection{${1:subsubsection name}}
-	\label{ssub:${2:$1}}
+	\subsubsection{${1}}
+#	\label{ssub:${2:$1}}
 	${0}
 # Sub Sub Section without number
 snippet subs* \subsubsection*
-	\subsubsection*{${1:subsubsection name}}
-	\label{ssub:${2:$1}}
+	\subsubsection*{${1}}
+#	\label{ssub:${2:$1}}
 	${0}
 # Paragraph
 snippet par \paragraph
@@ -193,8 +217,8 @@ snippet citep \citep
 	\citep{${1}} ${0}
 snippet citet \citet
 	\citet{${1}} ${0}
-snippet cite \cite[]{}
-	\cite[${1}]{${2}} ${0}
+snippet cite \cite{}
+	\cite{
 snippet citea \citeauthor
 	\citeauthor{${1}} ${0}
 snippet citey \citeyear
@@ -203,13 +227,13 @@ snippet fcite \footcite[]{}
 	\footcite[${1}]{${2}}${0}
 #Formating text: italic, bold, underline, small capital, emphase ..
 snippet it italic text
-	\textit{${0:text}}
-snippet bf bold face text
-	\textbf{${0:text}}
+	\textit{
+snippet b bold face text
+	\textbf{
 snippet under underline text
 	\underline{${0:text}}
-snippet emp emphasize text
-	\emph{${0:text}}
+snippet e emphasize text
+	\emph{
 snippet sc small caps text
 	\textsc{${0:text}}
 #Choosing font
@@ -218,7 +242,7 @@ snippet sf sans serife text
 snippet rm roman font text
 	\textrm{${0:text}}
 snippet tt typewriter (monospace) text
-	\texttt{${0:text}}
+	\texttt{
 #Math font
 snippet mf mathfrak
 	\mathfrak{${0:text}}
@@ -288,15 +312,15 @@ snippet \{ \{ \}
 #delimiter
 snippet lr left right
 	\left${1} ${0} \right$1
-snippet lr( left( right) 
+snippet lr( left( right)
 	\left( ${0} \right)
-snippet lr| left| right| 
+snippet lr| left| right|
 	\left| ${0} \right|
-snippet lr{ left\{ right\} 
+snippet lr{ left\{ right\}
 	\left\\{ ${0} \right\\}
-snippet lr[ left[ right] 
+snippet lr[ left[ right]
 	\left[ ${0} \right]
-snippet lra langle rangle 
+snippet lra langle rangle
 	\langle ${0} \rangle
 # Code listings
 snippet lst

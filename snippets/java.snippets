@@ -67,8 +67,7 @@ snippet cos
 ##
 ## Control Statements
 snippet case
-	case ${1}:
-		${0}
+	case ${1}: ${2}; break;
 snippet def
 	default:
 		${0}
@@ -228,6 +227,14 @@ snippet println
 	System.out.println(${0});
 snippet printlna
 	System.out.println(Arrays.toString(${0}));
+snippet spl
+	System.out.println(${0});
+snippet sfmt
+	String.format("${0}", )
+snippet splf
+	System.out.println(String.format("%s, %s", ${0}));
+snippet sfmt
+	String.format("${0}", )
 ##
 ## Render Methods
 snippet ren
