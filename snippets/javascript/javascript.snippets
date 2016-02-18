@@ -1,5 +1,15 @@
 # Functions
 
+snippet desc
+	describe('${1}', () => {
+		it('', () => {
+		});
+	});
+snippet it
+	it('${1}', () => {
+		${2}
+	});
+# prototype
 # prototype
 snippet proto
 	${1:class_name}.prototype.${2:method_name} = function(${3}) {
@@ -15,6 +25,8 @@ snippet f "" w
 	function(${1}) {
 		${0}
 	}
+snippet fn
+	(${1}) => {${0}};
 # Anonymous Function assigned to variable
 snippet vaf
 	var ${1:function_name} = function(${2}) {
