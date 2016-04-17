@@ -256,14 +256,13 @@ snippet ms mathscr
 snippet ft \footnote
 	\footnote{${0:text}}
 snippet fig figure environment (includegraphics)
-	\begin{figure}
-	\begin{center}
-		\includegraphics[scale=${1}]{Figures/${2}}
-	\end{center}
-	\caption{${3}}
-	\label{fig:${4}}
+	\begin{figure}[H]
+	\centering
+	\captionsetup{justification=centering}
+	\makebox[\textwidth][c]{\includegraphics[width=${3}cm]{gfx/${1}}}
+	\caption{${4}}
+	\label{fig:${2}}
 	\end{figure}
-	${0}
 snippet tikz figure environment (tikzpicture)
 	\begin{figure}
 	\begin{center}
