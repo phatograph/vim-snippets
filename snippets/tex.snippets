@@ -1,11 +1,17 @@
 #PREAMBLE
 
+snippet minipage
+	\begin{minipage}{\linewidth}
+	${1}
+	\end{minipage}
 snippet '
 	\textquotesingle
 snippet refs
 	\ref{sec:${1}}${2}
 snippet reff
 	\ref{fig:${1}}${2}
+snippet refl
+	\ref{lst:${1}}${2}
 snippet reft
 	\ref{tab:${1}}${2}
 snippet c
@@ -259,7 +265,7 @@ snippet fig figure environment (includegraphics)
 	\begin{figure}[H]
 	\centering
 	\captionsetup{justification=centering}
-	\makebox[\textwidth][c]{\includegraphics[width=${3}cm]{gfx/${1}}}
+	\makebox[\textwidth][c]{\includegraphics[width=${3:14}cm]{gfx/${1}}}
 	\caption{${4}}
 	\label{fig:${2}}
 	\end{figure}
