@@ -35,6 +35,10 @@ snippet @m
 	@media ${1:print} {
 		${0}
 	}
+snippet ai
+	align-items:
+snippet ai:c
+	align-items: center;
 snippet bg+
 	background: #${1:FFF} url(${2}) ${3:0} ${4:0} ${0:no-repeat};
 snippet bga
@@ -413,6 +417,8 @@ snippet d:tbr
 	display: table-row;
 snippet d:tb
 	display: table;
+snippet d:f
+	display: flex;
 snippet ec
 	empty-cells: ${0};
 snippet ec:h
@@ -421,6 +427,8 @@ snippet ec:s
 	empty-cells: show;
 snippet exp
 	expression()
+snippet fb
+	flex-basis: ${0};
 snippet fl
 	float: ${0};
 snippet fl:l
@@ -473,6 +481,8 @@ snippet ff:ss
 	font-family: ${0:Helvetica,Arial},sans-serif;
 snippet ff:s
 	font-family: ${0:Georgia,'Times New Roman'},serif;
+snippet fg
+	flex-grow: ${0};
 snippet fza
 	font-size-adjust: ${0};
 snippet fza:n
@@ -537,6 +547,14 @@ snippet h
 	height: ${0};
 snippet h:a
 	height: auto;
+snippet jc
+	justify-content: ${0};
+snippet jc:c
+	justify-content: center;
+snippet jc:fe
+	justify-content: flex-end;
+snippet jc:sb
+	justify-content: space-between;
 snippet l
 	left: ${0};
 snippet l:a
