@@ -35,10 +35,23 @@ snippet @m
 	@media ${1:print} {
 		${0}
 	}
+snippet @mxw
+	@media (max-width: ${1}) {
+		${0}
+	}
+snippet @mxh
+	@media (max-height: ${1}) {
+		${0}
+	}
 snippet ai
 	align-items:
 snippet ai:c
 	align-items: center;
+snippet bgset
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(image-path('${0}'));
 snippet bg+
 	background: #${1:FFF} url(${2}) ${3:0} ${4:0} ${0:no-repeat};
 snippet bga
@@ -71,6 +84,8 @@ snippet bgc:t
 	background-color: transparent;
 snippet bgi
 	background-image: url(${0});
+snippet bgir
+	background-image: url(image-path("${0}"));
 snippet bgi:n
 	background-image: none;
 snippet bgo
@@ -429,6 +444,10 @@ snippet exp
 	expression()
 snippet fb
 	flex-basis: ${0};
+snippet fd
+	flex-direction: column;
+snippet flw
+	flex-wrap: wrap;
 snippet fl
 	float: ${0};
 snippet fl:l
@@ -867,6 +886,8 @@ snippet tr
 	text-replace: ${0};
 snippet tr:n
 	text-replace: none;
+snippet trans
+	transition: ${0};
 snippet tsh+
 	text-shadow: ${1:0} ${2:0} ${3:0} #${0:000};
 snippet tsh

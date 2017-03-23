@@ -1,5 +1,7 @@
 # Some useful Unicode entities
 # Non-Breaking Space
+snippet de
+	</div>
 snippet sty
 	style="${1}"
 snippet nbs
@@ -297,6 +299,10 @@ snippet div.
 	<div class="${1}">
 		${0}
 	</div>
+snippet divi
+	<div>${0}</div>
+snippet divi.
+	<div class="${1}">${0}</div>
 snippet div#
 	<div id="${1}">
 		${0}
@@ -487,9 +493,11 @@ snippet html5l
 		</body>
 	</html>
 snippet i
-	<i>${0}</i>
+	<i class="${1}">${0}</i>
 snippet i.
 	<i class="${1}">${2}</i>
+snippet fa
+	<i class="fa fa-${1}"></i>
 snippet iframe
 	<iframe src="${1}" frameborder="0"></iframe>
 snippet iframe.
@@ -503,9 +511,9 @@ snippet img.
 snippet img#
 	<img id="${1}" src="${2}" alt="${3}" />
 snippet input
-	<input type="${1:text/submit/hidden/button/image}" name="${2}" id="${3:$2}" value="${4}" />
+	<input type="${1:text/submit/hidden/button/image}" />
 snippet input.
-	<input class="${1}" type="${2:text/submit/hidden/button/image}" name="${3}" id="${4:$3}" value="${5}" />
+	<input class="${1}" type="${2:text/submit/hidden/button/image}" />
 snippet input:text
 	<input type="text" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:submit
