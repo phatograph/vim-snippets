@@ -126,8 +126,8 @@ snippet slt
 snippet sslt
 	<%= stylesheet_link_tag "${0}" %>
 snippet if
-	<% if ${1} %>
-		${0:${VISUAL}}
+	<% if ${1:false} %>
+		${0}
 	<% end %>
 snippet ife
 	<% if ${1} %>

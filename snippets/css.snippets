@@ -1,7 +1,47 @@
+snippet gs
+	var(--global-space)
+snippet ca
+	calc(${0})
+snippet cags
+	calc(var(--global-space)${0})
 snippet . "selector { }"
 	${1} {
 		${0:${VISUAL}}
 	}
+snippet nlc
+	&:not(:last-child) {
+		${1}
+	}
+snippet nfc
+	&:not(:last-child) {
+		${0}
+	}
+snippet after2
+	&::after {
+		content: '';
+		display: block;
+		width: ${1}px;
+		height: ${2}px;
+		background-position: center center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-image: url('app/${3}.svg');
+	}
+snippet before2
+	&::before {
+		content: '';
+		display: block;
+		width: ${1}px;
+		height: ${2}px;
+		background-position: center center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-image: url('app/${3}.svg');
+	}
+snippet aniset
+	animation-fill-mode: forwards;
+	animation-name: ${0};
+	animation-duration: 400ms;
 snippet !
 	!important
 snippet bdi:m+
@@ -35,6 +75,22 @@ snippet @m "@media mediatype { }"
 	@media ${1:print} {
 		${0:${VISUAL}}
 	}
+snippet @smo
+	@media (max-width: $smobiles) {
+		${0}
+	}
+snippet @smo2
+	@media (--mobiles) {
+		${0}
+	}
+snippet @sta
+	@media (max-width: $stablets) {
+		${0}
+	}
+snippet @sta2
+	@media (--tablets) {
+		${0}
+	}
 snippet @mxw
 	@media (max-width: ${1}) {
 		${0}
@@ -52,6 +108,11 @@ snippet bgset
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-image: url(image-path('${0}'));
+snippet bgset2
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url('app/${0}.svg');
 snippet bg+
 	background: #${1:FFF} url(${2}) ${3:0} ${4:0} ${0:no-repeat};
 snippet bga
@@ -350,6 +411,9 @@ snippet cp:a
 	clip: auto;
 snippet cp:r
 	clip: rect(${1:0} ${2:0} ${3:0} ${0:0});
+snippet conset
+	content: '';
+	display: block;
 snippet c
 	color: ${0};
 snippet ct
@@ -561,7 +625,7 @@ snippet fw:lr
 snippet fw:n
 	font-weight: normal;
 snippet f
-	font: ${0};
+	flex: ${0};
 snippet h
 	height: ${0};
 snippet h:a
@@ -640,6 +704,16 @@ snippet m:2
 	margin: ${1:0} ${0:0};
 snippet m:0
 	margin: 0;
+snippet m0
+	margin: 0;
+snippet mt0
+	margin-top: 0;
+snippet mr0
+	margin-right: 0;
+snippet mb0
+	margin-bottom: 0;
+snippet ml0
+	margin-left: 0;
 snippet m:a
 	margin: auto;
 snippet mah
@@ -720,6 +794,10 @@ snippet ov:s
 	overflow: scroll;
 snippet ov:v
 	overflow: visible;
+snippet pe
+	pointer-events: none;
+snippet pe:a
+	pointer-events: all;
 snippet pb
 	padding-bottom: ${0};
 snippet pl
@@ -738,6 +816,16 @@ snippet p:2
 	padding: ${1:0} ${0:0};
 snippet p:0
 	padding: 0;
+snippet p0
+	padding: 0;
+snippet pt0
+	padding-top: 0;
+snippet pr0
+	padding-right: 0;
+snippet pb0
+	padding-bottom: 0;
+snippet pl0
+	padding-left: 0;
 snippet pgba
 	page-break-after: ${0};
 snippet pgba:aw
@@ -876,6 +964,10 @@ snippet tj:k
 	text-justify: kashida;
 snippet tj:t
 	text-justify: tibetan;
+snippet tlx
+	translateX(${0})
+snippet tly
+	translateY(${0})
 snippet to+
 	text-outline: ${1:0} ${2:0} #${0:000};
 snippet to
@@ -886,6 +978,8 @@ snippet tr
 	text-replace: ${0};
 snippet tr:n
 	text-replace: none;
+snippet tranf
+	transform: ${0};
 snippet trans
 	transition: ${0};
 snippet tsh+
@@ -937,6 +1031,8 @@ snippet va:tt
 snippet va:t
 	vertical-align: top;
 snippet v
+	var(${0})
+snippet vi
 	visibility: ${0};
 snippet v:c
 	visibility: collapse;
@@ -1012,10 +1108,11 @@ snippet lc
 	last-child
 snippet lot
 	last-of-type
+snippet :nthot
+	:nth-of-type(${0})
 snippet :nc
 	:nth-child(${0})
-snippet :nlc
-	:nth-last-child(${0})
+snippet :nlof-typenth-last-child(${0})
 snippet :oc
 	:only-child
 snippet :a
@@ -1026,3 +1123,9 @@ snippet ::a
 	::after
 snippet ::b
 	::before
+snippet key
+	@keyframes ${0} {
+		0% { transform: none; }
+		50% { transform: perspective(1000px) rotateY(-10deg) scale(1.025); }
+		100% { transform: perspective(3000px) rotateY(0deg) scale(1.05); }
+	}

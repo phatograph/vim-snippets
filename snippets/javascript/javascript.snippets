@@ -3,7 +3,13 @@
 snippet ts
 	this.state.
 snippet tss
-	this.setState(${0})
+	this.setState((prevState, props) => ({
+		${0}
+	}))
+snippet sto
+	setTimeout(() => {
+		${0}
+	}, 100)
 snippet pvd
 	e.preventDefault()
 snippet arg
@@ -66,8 +72,7 @@ snippet sdf
 # Flow control
 # if
 snippet if "if (condition) { ... }"
-	if (${1:true}) {
-		${0:${VISUAL}}
+	if (${0}) {
 	}
 # if ... else
 snippet ife "if (condition) { ... } else { ... }"

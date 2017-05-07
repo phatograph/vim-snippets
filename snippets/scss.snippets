@@ -34,8 +34,10 @@ snippet eif
 		${0}
 	}
 snippet for
-	@for ${1:$i} from ${2:1} through ${3:3} {
-		${0}
+	@for $i from 1 through 4 {
+		&:nth-of-type(#{$i})::before {
+			background-image: url(image-path('landing/step-0#{$i}.png'));
+		}
 	}
 snippet each
 	@each ${1:$item} in ${2:items} {
