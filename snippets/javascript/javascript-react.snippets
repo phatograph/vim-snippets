@@ -1,3 +1,31 @@
+snippet reactclass
+	import React from 'react';
+	import PropTypes from 'prop-types';
+
+	class ${0}Class extends React.Component {
+		constructor(props) {
+			super(props);
+
+			this.state = {
+			};
+		}
+
+		render() {
+			return (
+				<div>
+				</div>
+			);
+		}
+	}
+
+	Class.propTypes = {
+	};
+
+	Class.defaultProps = {
+	};
+
+	export default Class;
+
 snippet ir
 	import React from 'react';
 snippet ird

@@ -2,6 +2,8 @@ snippet gs
 	var(--global-space)
 snippet ca
 	calc(${0})
+snippet cav
+	calc(var(--${0}))
 snippet cags
 	calc(var(--global-space)${0})
 snippet . "selector { }"
@@ -1031,7 +1033,7 @@ snippet va:tt
 snippet va:t
 	vertical-align: top;
 snippet v
-	var(${0})
+	var(--${0})
 snippet vi
 	visibility: ${0};
 snippet v:c
