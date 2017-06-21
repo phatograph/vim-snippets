@@ -10,15 +10,19 @@ snippet . "selector { }"
 	${1} {
 		${0:${VISUAL}}
 	}
+snippet not
+	&:nth-of-type(${1}) {
+		${2}
+	}
 snippet nlc
 	&:not(:last-child) {
 		${1}
 	}
 snippet nfc
-	&:not(:last-child) {
+	&:not(:first-child) {
 		${0}
 	}
-snippet after2
+snippet after
 	&::after {
 		content: '';
 		display: block;
@@ -29,7 +33,7 @@ snippet after2
 		background-repeat: no-repeat;
 		background-image: url('app/${3}.svg');
 	}
-snippet before2
+snippet before
 	&::before {
 		content: '';
 		display: block;
@@ -77,27 +81,31 @@ snippet @m "@media mediatype { }"
 	@media ${1:print} {
 		${0:${VISUAL}}
 	}
-snippet @smo
+snippet smo
 	@media (max-width: $smobiles) {
 		${0}
 	}
-snippet @smo2
+snippet smo2
 	@media (--mobiles) {
 		${0}
 	}
-snippet @sta
+snippet sta
 	@media (max-width: $stablets) {
 		${0}
 	}
-snippet @sta2
+snippet sta2
 	@media (--tablets) {
 		${0}
 	}
-snippet @mxw
+snippet stal
+	@media (max-width: $stabletsl) {
+		${0}
+	}
+snippet mxw
 	@media (max-width: ${1}) {
 		${0}
 	}
-snippet @mxh
+snippet mxh
 	@media (max-height: ${1}) {
 		${0}
 	}
@@ -1105,16 +1113,21 @@ snippet zoo
 snippet :h
 	:hover
 snippet fc
-	first-child
+	&:first-child {
+		${0}
+	}
 snippet lc
-	last-child
+	&:last-child {
+		${0}
+	}
 snippet lot
-	last-of-type
+	&:last-of-type {
+		${0}
+	}
 snippet :nthot
 	:nth-of-type(${0})
 snippet :nc
 	:nth-child(${0})
-snippet :nlof-typenth-last-child(${0})
 snippet :oc
 	:only-child
 snippet :a

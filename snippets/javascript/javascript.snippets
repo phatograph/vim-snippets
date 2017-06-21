@@ -1,5 +1,7 @@
 # Functions
 
+snippet ref
+	ref={el => this.$el = el}
 snippet psu
 	import PropTypes from 'prop-types';
 	${0}Class.propTypes = {
@@ -10,9 +12,21 @@ snippet psu
 snippet ts
 	this.state.
 snippet tss
+	this.setState({
+		${0}
+	});
+snippet tssc
+	this.setState({
+		${0}
+	}, () => {});
+snippet tssp
 	this.setState((prevState, props) => ({
 		${0}
-	}))
+	}));
+snippet tsspc
+	this.setState((prevState, props) => ({
+		${0}
+	}), () => {});
 snippet sto
 	setTimeout(() => {
 		${0}
