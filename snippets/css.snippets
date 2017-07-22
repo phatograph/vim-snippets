@@ -992,6 +992,7 @@ snippet tranf
 	transform: ${0};
 snippet trans
 	transition: ${0};
+	will-change: ;
 snippet tsh+
 	text-shadow: ${1:0} ${2:0} ${3:0} #${0:000};
 snippet tsh
@@ -1111,13 +1112,19 @@ snippet z:a
 snippet zoo
 	zoom: 1;
 snippet :h
-	:hover
+	&:hover {
+		${0}
+	}
 snippet fc
 	&:first-child {
 		${0}
 	}
 snippet lc
 	&:last-child {
+		${0}
+	}
+snippet fot
+	&:first-of-type {
 		${0}
 	}
 snippet lot
