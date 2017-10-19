@@ -1,5 +1,7 @@
 # Some useful Unicode entities
 # Non-Breaking Space
+snippet ablank
+	target='_blank' rel='nofollow'
 snippet Link
 	<Link to=''>${0}</Link>
 snippet NavLink
@@ -392,6 +394,10 @@ snippet form
 	<form action="${1}" method="${2:post}">
 		${0}
 	</form>
+snippet formx
+	<form>
+		${0}
+	</form>
 snippet form.
 	<form class="${1}" action="${2}" method="${3:post}">
 		${0}
@@ -519,6 +525,8 @@ snippet img#
 	<img id="${1}" src="${2}" alt="${3}" />
 snippet input
 	<input type="${1:text/submit/hidden/button/image}" />
+snippet inputx
+	<input type="text" />
 snippet input.
 	<input class="${1}" type="${2:text/submit/hidden/button/image}" />
 snippet input:text
@@ -781,6 +789,10 @@ snippet select
 	<select name="${1}" id="${2:$1}">
 		${0}
 	</select>
+snippet selectx
+	<select>
+		<option>${0}</option>
+	</select>
 snippet select.
 	<select name="${1}" id="${2:$1}" class="${3}>
 		${0}
@@ -841,6 +853,8 @@ snippet td+
 	td+${0}
 snippet textarea
 	<textarea name="${1}" id="${2:$1}" rows="${3:8}" cols="${4:40}">${5}</textarea>
+snippet textareax
+	<textarea>${0}</textarea>
 snippet tfoot
 	<tfoot>
 		${0}

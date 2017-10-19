@@ -71,7 +71,7 @@ snippet not
 	}
 snippet nlc
 	&:not(:last-child) {
-		${1}
+		${0}
 	}
 snippet nfc
 	&:not(:first-child) {
@@ -156,6 +156,10 @@ snippet stal
 	@media (max-width: $stabletsl) {
 		${0}
 	}
+snippet stal2
+	@media (--tablets-l) {
+		${0}
+	}
 snippet mxw
 	@media (max-width: ${1}) {
 		${0}
@@ -168,6 +172,10 @@ snippet ai
 	align-items:
 snippet ai:c
 	align-items: center;
+snippet ai:fs
+	align-items: flex-start;
+snippet ai:fe
+	align-items: flex-end;
 snippet bgset
 	background-position: center center;
 	background-size: contain;
@@ -690,7 +698,9 @@ snippet fw:lr
 snippet fw:n
 	font-weight: normal;
 snippet f
-	flex: ${0};
+	flex: 0 0 ${1:auto};
+snippet f1
+	flex: 1;
 snippet h
 	height: ${0};
 snippet h:a
@@ -851,6 +861,8 @@ snippet ovy:v
 	overflow-y: visible;
 snippet ov
 	overflow: ${0};
+snippet ov:smooth
+	-webkit-overflow-scrolling: touch;
 snippet ov:a
 	overflow: auto;
 snippet ov:h
