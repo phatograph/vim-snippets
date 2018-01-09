@@ -1,9 +1,7 @@
 # Functions
 
-snippet times
-	Array.from(Array(7)).map((_, i) => (
-		${0}
-	))}
+snippet l10
+	l10n(this.props.locale, '${1}')
 snippet ref
 	ref={el => this.$el = el}
 snippet psu
@@ -280,8 +278,8 @@ snippet qs
 snippet qsa
 	${1:document}.querySelectorAll('${0:CSS selector}')
 # Debugging
-snippet de
-	debugger;
+# snippet de
+# debugger;
 # console.log
 snippet cl
 	console.log(${0})

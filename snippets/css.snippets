@@ -1,3 +1,25 @@
+snippet counter
+	counter-reset: counter-stats-item;
+	counter-increment: counter-stats-item;
+	content: counter(counter-stats-item);
+snippet of
+	object-fit: contain;
+snippet of:cov
+	object-fit: cover;
+snippet gc
+	grid-column: ${1:1 / 2};
+snippet gr
+	grid-row: ${1:1 / 2};
+snippet gtc
+	grid-template-columns: repeat(${1:1}, 1fr);
+snippet gtr
+	grid-template-rows: ${1};
+snippet gg
+	grid-gap: ${0};
+snippet ce
+	[class$='${1}'] {
+		${2}
+	}
 snippet mixin
 	@mixin ${1:name}($${2:var}: ${3:default}) {
 		${4}
@@ -39,8 +61,11 @@ snippet for
 		}
 	}
 snippet each
-	@each ${1:$item} in ${2:items} {
-		${0}
+	$items: 'k', 'daily', 'family', 'lawson', 'mini', 'seven', 'sunkus';
+	@each $item in $items {
+		&--#{$item} {
+			background-image: url('/images2/icon-konbini-#{$item}.svg');
+		}
 	}
 snippet while
 	@while ${1:$i} ${2:>} ${3:0} {
@@ -137,7 +162,7 @@ snippet @m "@media mediatype { }"
 		${0:${VISUAL}}
 	}
 snippet smo
-	@media (max-width: $smobiles) {
+	@media (max-width: $screen-mobiles) {
 		${0}
 	}
 snippet smo2
@@ -145,7 +170,7 @@ snippet smo2
 		${0}
 	}
 snippet sta
-	@media (max-width: $stablets) {
+	@media (max-width: $screen-tablets) {
 		${0}
 	}
 snippet sta2
@@ -153,7 +178,7 @@ snippet sta2
 		${0}
 	}
 snippet stal
-	@media (max-width: $stabletsl) {
+	@media (max-width: $screen-tablets-l) {
 		${0}
 	}
 snippet stal2
@@ -539,6 +564,8 @@ snippet d:b
 	display: block;
 snippet d:cp
 	display: compact;
+snippet d:g
+	display: grid;
 snippet d:ib
 	display: inline-block;
 snippet d:itb
@@ -868,6 +895,8 @@ snippet ov:a
 snippet ov:h
 	overflow: hidden;
 snippet ov:s
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
 	overflow: scroll;
 snippet ov:v
 	overflow: visible;
@@ -1058,8 +1087,14 @@ snippet tr:n
 snippet tranf
 	transform: ${0};
 snippet trans
-	transition: ${0};
-	will-change: ;
+	transition: ${1:opacity 0.4s}${2:, transform 0.4s};
+	will-change: ${3:opacity}${4:, transform};
+snippet transo
+	transition: ${1:opacity 0.4s};
+	will-change: ${3:opacity};
+snippet transt
+	transition: ${2:transform 0.4s};
+	will-change: ${4:transform};
 snippet tsh+
 	text-shadow: ${1:0} ${2:0} ${3:0} #${0:000};
 snippet tsh

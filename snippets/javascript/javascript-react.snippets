@@ -1,3 +1,7 @@
+snippet dangerous
+	dangerouslySetInnerHTML={{__html: ${1}}}
+snippet tbind
+	(() => { ${0} }).bind(this)
 snippet reactclass
 	import React from 'react';
 	import PropTypes from 'prop-types';
@@ -12,7 +16,8 @@ snippet reactclass
 
 		render() {
 			return (
-				<div>
+				<div className='Class'>
+					Class
 				</div>
 			);
 		}
@@ -25,7 +30,6 @@ snippet reactclass
 	};
 
 	export default Class;
-
 snippet ir
 	import React from 'react';
 snippet ird
