@@ -112,6 +112,7 @@ snippet after
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-image: url('app/${3}.svg');
+		background-image: url(image-path('${4}'));
 	}
 snippet before
 	&::before {
@@ -123,6 +124,7 @@ snippet before
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-image: url('app/${3}.svg');
+		background-image: url(image-path('${4}'));
 	}
 snippet aniset
 	animation-fill-mode: forwards;
@@ -193,6 +195,14 @@ snippet mxh
 	@media (max-height: ${1}) {
 		${0}
 	}
+snippet as
+	align-self:
+snippet as:c
+	align-self: center;
+snippet as:fs
+	align-self: flex-start;
+snippet as:fe
+	align-self: flex-end;
 snippet ai
 	align-items:
 snippet ai:c
@@ -556,6 +566,8 @@ snippet cur:t
 	cursor: text;
 snippet d
 	display: ${0};
+snippet d:if
+	display: inline-flex;
 snippet d:mib
 	display: -moz-inline-box;
 snippet d:mis
@@ -740,6 +752,14 @@ snippet jc:fe
 	justify-content: flex-end;
 snippet jc:sb
 	justify-content: space-between;
+snippet js
+	justify-self: ${0};
+snippet js:c
+	justify-self: center;
+snippet js:e
+	justify-self: end;
+snippet js:s
+	justify-self: start;
 snippet l
 	left: ${0};
 snippet l:a
@@ -1084,15 +1104,15 @@ snippet tr
 	text-replace: ${0};
 snippet tr:n
 	text-replace: none;
-snippet tranf
+snippet tf
 	transform: ${0};
-snippet trans
+snippet ts
 	transition: ${1:opacity 0.4s}${2:, transform 0.4s};
 	will-change: ${3:opacity}${4:, transform};
-snippet transo
+snippet tso
 	transition: ${1:opacity 0.4s};
 	will-change: ${3:opacity};
-snippet transt
+snippet tst
 	transition: ${2:transform 0.4s};
 	will-change: ${4:transform};
 snippet tsh+
@@ -1145,6 +1165,8 @@ snippet va:t
 	vertical-align: top;
 snippet v-
 	var(--${0})
+snippet c-
+	var(--c-${0})
 snippet vi
 	visibility: ${0};
 snippet v:c

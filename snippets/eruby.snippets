@@ -4,6 +4,8 @@
 extends html
 
 # Rails *****************************
+snippet t
+	<%= t(".${0}") %>
 snippet cl
 	:class => '${1}'
 snippet sym
@@ -108,6 +110,8 @@ snippet lipp
 	<%= link_to "${1:Link text...}", ${0:model}s_path %>
 snippet lt
 	<%= link_to "${1:name}", ${0:dest} %>
+snippet ltc
+	<%= link_to "${2:name}", ${1:dest}, class: "${0}" %>
 snippet ltd
 	<%= link_to ${1:dest} do %>
 	<% end %>

@@ -1,7 +1,13 @@
 # Functions
 
+snippet rand
+	~~(Math.random() * ${1:10})
+snippet gl
+	get(${0}, '${2}', 0).toLocaleString()
+snippet g
+	get(this.props, '${0}')
 snippet l10
-	l10n(this.props.locale, '${1}')
+	l10n('${1}')
 snippet ref
 	ref={el => this.$el = el}
 snippet psu
@@ -34,7 +40,7 @@ snippet sto
 		${0}
 	}, 100)
 snippet pvd
-	e.preventDefault();
+	e.preventDefault()
 snippet arg
 	arguments
 snippet desc
