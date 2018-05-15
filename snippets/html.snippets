@@ -123,8 +123,6 @@ snippet charset
 	charset="${1:utf-8}"
 snippet data
 	data-${1}="${2:$1}"
-snippet for
-	for="${1}"
 snippet height
 	height="${1}"
 snippet href
@@ -160,8 +158,8 @@ snippet a:ext
 	<a href="http://${1:example.com}">${1}</a>
 snippet a:mail
 	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${0:email me}</a>
-snippet ac
-	<a href="`@+`">${0:`@+`}</a>
+# snippet ac
+# 	<a href="`@+`">${0:`@+`}</a>
 snippet abbr
 	<abbr title="${1}">${0}</abbr>
 snippet address
@@ -229,6 +227,8 @@ snippet body
 	</body>
 snippet br
 	<br />
+snippet buttonx
+	<button className='Button'>${0}</button>
 snippet button
 	<button type="${1:submit}">${0}</button>
 snippet button.
@@ -300,9 +300,6 @@ snippet dialog
 snippet div
 	<div>
 		${0}
-	</div>
-snippet divc
-	<div className='${1}'>
 	</div>
 snippet div.
 	<div class="${1}">

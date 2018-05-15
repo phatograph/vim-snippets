@@ -1,5 +1,31 @@
 extends html
 
+snippet k
+	key={i}
+snippet cn
+	className={className('${0}', {})}
+snippet ts
+	this.state.
+snippet tss
+	this.setState({
+		${0}
+	});
+snippet tssc
+	this.setState({
+		${0}
+	}, () => {});
+snippet tssp
+	this.setState((prevState, props) => ({
+		${0}
+	}));
+snippet tsspc
+	this.setState((prevState, props) => ({
+		${0}
+	}), () => {});
+snippet l10
+	l10n('${1}')
+snippet ref
+	ref={el => this.$el = el}
 snippet c
 	className='${0}'
 snippet tp
@@ -9,3 +35,110 @@ snippet ano
 		return (
 		)
 	})()}
+snippet pc
+	<p className='${1}'>${2}</p>
+snippet divc
+	<div className='${1}'>
+	</div>
+snippet spanc
+	<span className='${1}'>${2}</span>
+snippet ulc
+	<ul className='${1}'>
+	</ul>
+snippet lic
+	<li className='${1}'>
+	</li>
+snippet ac
+	<a className='${1}'>${2}</a>
+snippet frag
+	<React.Fragment>${0}
+	</React.Fragment>
+snippet dangerous
+	dangerouslySetInnerHTML={{__html: ${0}}}
+snippet tbind
+	(() => { ${0} }).bind(this)
+snippet reduxclass
+	import React from 'react';
+	import PropTypes from 'prop-types';
+	import {get} from 'lodash';
+	import {connect} from 'react-redux';
+	import className from 'classnames';
+
+	class ${0}Class extends React.Component {
+		constructor(props) {
+			super(props);
+
+			this.state = {
+			};
+		}
+
+		render() {
+			return (
+				<div className='Class'>
+					Class
+				</div>
+			);
+		}
+	}
+
+	Class.propTypes = {
+	};
+
+	Class.defaultProps = {
+	};
+
+	const mapStateToProps = (state) => ({
+	});
+
+	const mapDispatchToProps = (dispatch) => ({
+	});
+
+	export default connect(mapStateToProps, mapDispatchToProps)(Class);
+snippet reactclass
+	import React from 'react';
+	import PropTypes from 'prop-types';
+	import {get} from 'lodash';
+	import className from 'classnames';
+
+	class ${0}Class extends React.Component {
+		constructor(props) {
+			super(props);
+
+			this.state = {
+			};
+		}
+
+		render() {
+			return (
+				<div className='Class'>
+					Class
+				</div>
+			);
+		}
+	}
+
+	Class.propTypes = {
+	};
+
+	Class.defaultProps = {
+	};
+
+	export default Class;
+snippet ki
+	key={i}
+snippet timesa
+	{${1:data}.map((x, i) => (
+		<li key={i}>${2}</li>
+	))}
+snippet timeso
+	{Array.from(Array(7)).map((_, i) => ({
+		${0}
+	}))}
+snippet timeso
+	{Array.from(Array(7)).map((_, i) => ({
+		${0}
+	}))}
+snippet times
+	{Array.from(Array(7)).map((x, i) => (
+		${0}
+	))}
