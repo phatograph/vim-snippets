@@ -1,7 +1,16 @@
 extends html
 
-snippet k
-	key={i}
+snippet onEvent
+	onEvent = (args) => {
+		let _handler = this._handlers.onEvent[args]
+
+		if (!_handler) {
+			_handler = (e) => {
+			}
+		}
+
+		return _handler
+	}
 snippet cn
 	className={className('${0}', {})}
 snippet ts
@@ -65,6 +74,39 @@ snippet reduxclass
 	import className from 'classnames';
 
 	class ${0}Class extends React.Component {
+		state = {
+		};
+
+		render() {
+			return (
+				<div className='Class'>
+					Class
+				</div>
+			);
+		}
+	}
+
+	Class.propTypes = {
+	};
+
+	Class.defaultProps = {
+	};
+
+	const mapStateToProps = (state) => ({
+	});
+
+	const mapDispatchToProps = (dispatch) => ({
+	});
+
+	export default connect(mapStateToProps, mapDispatchToProps)(Class);
+snippet reduxclass:con
+	import React from 'react';
+	import PropTypes from 'prop-types';
+	import {get} from 'lodash';
+	import {connect} from 'react-redux';
+	import className from 'classnames';
+
+	class ${0}Class extends React.Component {
 		constructor(props) {
 			super(props);
 
@@ -101,6 +143,32 @@ snippet reactclass
 	import className from 'classnames';
 
 	class ${0}Class extends React.Component {
+		.state = {
+		};
+
+		render() {
+			return (
+				<div className='Class'>
+					Class
+				</div>
+			);
+		}
+	}
+
+	Class.propTypes = {
+	};
+
+	Class.defaultProps = {
+	};
+
+	export default Class;
+snippet reactclass:con
+	import React from 'react';
+	import PropTypes from 'prop-types';
+	import {get} from 'lodash';
+	import className from 'classnames';
+
+	class ${0}Class extends React.Component {
 		constructor(props) {
 			super(props);
 
@@ -126,19 +194,15 @@ snippet reactclass
 	export default Class;
 snippet ki
 	key={i}
+snippet times
+	{Array.from(Array(7)).map((_, i) => ({
+		${0}
+	}))}
 snippet timesa
 	{${1:data}.map((x, i) => (
 		<li key={i}>${2}</li>
 	))}
-snippet timeso
-	{Array.from(Array(7)).map((_, i) => ({
-		${0}
-	}))}
-snippet timeso
-	{Array.from(Array(7)).map((_, i) => ({
-		${0}
-	}))}
-snippet times
+snippet timesx
 	{Array.from(Array(7)).map((x, i) => (
 		${0}
 	))}
