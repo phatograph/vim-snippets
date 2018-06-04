@@ -74,10 +74,16 @@ snippet reduxclass
 	import className from 'classnames';
 
 	class ${0}Class extends React.Component {
+		static propTypes = {
+		};
+
+		static defaultProps = {
+		};
+
 		state = {
 		};
 
-		render() {
+		render = () => {
 			return (
 				<div className='Class'>
 					Class
@@ -85,12 +91,6 @@ snippet reduxclass
 			);
 		}
 	}
-
-	Class.propTypes = {
-	};
-
-	Class.defaultProps = {
-	};
 
 	const mapStateToProps = (state) => ({
 	});
@@ -143,10 +143,16 @@ snippet reactclass
 	import className from 'classnames';
 
 	class ${0}Class extends React.Component {
+		static propTypes = {
+		};
+
+		static defaultProps = {
+		};
+
 		state = {
 		};
 
-		render() {
+		render = () => {
 			return (
 				<div className='Class'>
 					Class
@@ -154,12 +160,6 @@ snippet reactclass
 			);
 		}
 	}
-
-	Class.propTypes = {
-	};
-
-	Class.defaultProps = {
-	};
 
 	export default Class;
 snippet reactclass:con
@@ -199,8 +199,12 @@ snippet times
 		${0}
 	}))}
 snippet timesa
-	{${1:data}.map((x, i) => (
-		<li key={i}>${2}</li>
+	{${0:data}.map((x, i) => (
+		<li key={i}></li>
+	))}
+snippet timesg
+	{get(this.props, '${0}', []).map((x, i) => (
+		<div key={i}></div>
 	))}
 snippet timesx
 	{Array.from(Array(7)).map((x, i) => (
