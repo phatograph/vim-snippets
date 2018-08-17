@@ -118,20 +118,22 @@ snippet ca
 	calc(${0})
 snippet cav
 	calc(var(--${0}))
-snippet g
-	calc(var(--global-space))
 snippet gx
 	calc(var(--global-space) * ${0})
 snippet g25
-	calc(var(--global-space) * .25${0})
+	calc(var(--global-space) * .25)
 snippet g5
-	calc(var(--global-space) * .5${0})
+	calc(var(--global-space) * .5)
 snippet g75
-	calc(var(--global-space) * .75${0})
+	calc(var(--global-space) * .75)
+snippet g
+	calc(var(--global-space) * 1)
 snippet g15
-	calc(var(--global-space) * 1.5${0})
+	calc(var(--global-space) * 1.5)
 snippet g2
-	calc(var(--global-space) * 2${0})
+	calc(var(--global-space) * 2)
+snippet g3
+	calc(var(--global-space) * 3)
 snippet . "selector { }"
 	${1} {
 		${0:${VISUAL}}
