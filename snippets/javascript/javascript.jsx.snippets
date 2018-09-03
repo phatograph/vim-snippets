@@ -1,7 +1,7 @@
 extends html
 
 snippet dlc
-	<dl className=''>
+	<dl className='${0}'>
 	</dl>
 snippet h1c
 	<h1 className='${1}'>${2}</h1>
@@ -33,19 +33,19 @@ snippet ts
 snippet tss
 	this.setState({
 		${0}
-	});
+	})
 snippet tssc
 	this.setState({
 		${0}
-	}, () => {});
+	}, () => {})
 snippet tssp
 	this.setState((prevState, props) => ({
 		${0}
-	}));
+	}))
 snippet tsspc
 	this.setState((prevState, props) => ({
 		${0}
-	}), () => {});
+	}), () => {})
 snippet l10
 	l10n('${1}')
 snippet ref

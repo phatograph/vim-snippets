@@ -47,7 +47,7 @@ snippet gtc:fit
 snippet gtr
 	grid-template-rows: ${0};
 snippet gg
-	grid-gap: ${0:calc(var(--global-space))};
+	grid-gap: ${0:calc(var(--global-space) * 1)};
 snippet gg5
 	grid-gap: ${0:calc(var(--global-space) * .5)};
 snippet mc
@@ -256,13 +256,17 @@ snippet as:fs
 snippet as:fe
 	align-self: flex-end;
 snippet ai
-	align-items:
+	align-items: ${0};
 snippet ai:c
 	align-items: center;
 snippet ai:fs
 	align-items: flex-start;
 snippet ai:fe
 	align-items: flex-end;
+snippet ai:s
+	align-items: start;
+snippet ai:e
+	align-items: end;
 snippet bgset
 	background-position: center center;
 	background-size: contain;
@@ -810,6 +814,10 @@ snippet h
 	height: ${0};
 snippet h:a
 	height: auto;
+snippet ji
+	justify-items: ${0};
+snippet ji:c
+	justify-items: center;
 snippet jc
 	justify-content: ${0};
 snippet jc:c
@@ -818,6 +826,8 @@ snippet jc:fe
 	justify-content: flex-end;
 snippet jc:sb
 	justify-content: space-between;
+snippet jc:se
+	justify-content: space-evenly;
 snippet js
 	justify-self: ${0};
 snippet js:c
@@ -866,6 +876,8 @@ snippet lis
 	list-style: ${0};
 snippet lis:n
 	list-style: none;
+snippet mg
+	margin: calc(var(--global-space) * ${0:1});
 snippet mb
 	margin-bottom: ${0};
 snippet mb:a
@@ -1000,6 +1012,8 @@ snippet pt
 	padding-top: ${0};
 snippet p
 	padding: ${0};
+snippet pg
+	padding: calc(var(--global-space) * ${0:1});
 snippet p:4
 	padding: ${1:0} ${2:0} ${3:0} ${0:0};
 snippet p:3
