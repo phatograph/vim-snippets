@@ -156,11 +156,10 @@ snippet after
 		display: block;
 		width: ${1}px;
 		height: ${2}px;
+		background-image: url(image-path('${3}'));
 		background-position: center center;
 		background-size: contain;
 		background-repeat: no-repeat;
-		background-image: url('app/${3}.svg');
-		background-image: url(image-path('${4}'));
 	}
 snippet before
 	&::before {
@@ -168,11 +167,10 @@ snippet before
 		display: block;
 		width: ${1}px;
 		height: ${2}px;
+		background-image: url(image-path('${3}'));
 		background-position: center center;
 		background-size: contain;
 		background-repeat: no-repeat;
-		background-image: url('app/${3}.svg');
-		background-image: url(image-path('${4}'));
 	}
 snippet aniset
 	animation-fill-mode: forwards;

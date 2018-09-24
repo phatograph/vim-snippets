@@ -1,5 +1,24 @@
 extends html
 
+snippet importimageloader
+	import ImageLoader from './ImageLoader'
+snippet importaction
+	import {
+	} from '../actions'
+snippet revent
+	const loginWithEmail = (state = defaultState, action) => {
+		switch (action.type) {
+			case 'LOGIN_WITH_EMAIL':
+				return loadingState(state)
+			default:
+				return state
+		}
+	}
+snippet thens
+	.then((res) => {
+		if (get(res, 'type', '').endsWith('_SUCCESS')) {
+		}
+	})
 snippet dlc
 	<dl className='${0}'>
 	</dl>
@@ -87,6 +106,7 @@ snippet reduxclass
 	import {get} from 'lodash';
 	import {connect} from 'react-redux';
 	import className from 'classnames';
+	import {Link} from 'react-router-dom';
 
 	class ${0}Class extends React.Component {
 		static propTypes = {
@@ -120,6 +140,7 @@ snippet reduxclass:con
 	import {get} from 'lodash';
 	import {connect} from 'react-redux';
 	import className from 'classnames';
+	import {Link} from 'react-router-dom';
 
 	class ${0}Class extends React.Component {
 		constructor(props) {
@@ -156,6 +177,7 @@ snippet reactclass
 	import PropTypes from 'prop-types';
 	import {get} from 'lodash';
 	import className from 'classnames';
+	import {Link} from 'react-router-dom';
 
 	class ${0}Class extends React.Component {
 		static propTypes = {
@@ -182,6 +204,7 @@ snippet reactclass:con
 	import PropTypes from 'prop-types';
 	import {get} from 'lodash';
 	import className from 'classnames';
+	import {Link} from 'react-router-dom';
 
 	class ${0}Class extends React.Component {
 		constructor(props) {
