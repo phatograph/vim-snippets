@@ -1,5 +1,12 @@
 extends html
 
+snippet Linkparams
+	{
+		pathname: get(this.props, 'location.pathname'),
+		search: queryString.stringify({
+			returnPath: get(this.props, 'location.pathname'),
+		}),
+	}
 snippet importimageloader
 	import ImageLoader from './ImageLoader'
 snippet importaction
@@ -35,6 +42,10 @@ snippet h5c
 snippet h6c
 	<h6 className='${1}'>${2}</h6>
 snippet onEvent
+	_handlers = {
+		onEvent: {},
+	}
+
 	onEvent = (args) => {
 		let _handler = this._handlers.onEvent[args]
 
@@ -59,14 +70,14 @@ snippet tssc
 	}, () => {})
 snippet tssp
 	this.setState((prevState, props) => ({
-		${0}
+		isActive: !prevState.isActive,
 	}))
 snippet tsspc
 	this.setState((prevState, props) => ({
-		${0}
+		isActive: !prevState.isActive,
 	}), () => {})
-snippet l10
-	l10n('${1}')
+snippet t
+	t('${1}')
 snippet ref
 	ref={el => this.$el = el}
 snippet c

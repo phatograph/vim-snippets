@@ -382,7 +382,7 @@ snippet bdbs:n
 snippet bdbw
 	border-bottom-width: ${0};
 snippet bdb
-	border-bottom: 1px solid ${0};
+	border-bottom: 1px solid ${0:var(--c-border)};
 snippet bdb0
 	border-bottom: 0;
 snippet bdb:n
@@ -440,7 +440,7 @@ snippet bdls:n
 snippet bdlw
 	border-left-width: ${0};
 snippet bdl
-	border-left: 1px solid ${0};
+	border-left: 1px solid ${0:var(--c-border)};
 snippet bdl0
 	border-left: 0;
 snippet bdl:n
@@ -466,7 +466,7 @@ snippet bdrs:n
 snippet bdrw
 	border-right-width: ${0};
 snippet bdr
-	border-right: 1px solid ${0};
+	border-right: 1px solid ${0:var(--c-border)};
 snippet bdr0
 	border-right: 0;
 snippet bdr:n
@@ -532,7 +532,7 @@ snippet bdts:n
 snippet bdtw
 	border-top-width: ${0};
 snippet bdt
-	border-top: 1px solid ${0};
+	border-top: 1px solid ${0:var(--c-border)};
 snippet bdt0
 	border-top: 0;
 snippet bdt:n
@@ -540,7 +540,7 @@ snippet bdt:n
 snippet bdw
 	border-width: ${0};
 snippet bd
-	border: 1px solid ${0};
+	border: 1px solid ${0:var(--c-border)};
 snippet bd0
 	border: 0;
 snippet bd:n
@@ -999,7 +999,7 @@ snippet ov:v
 snippet pe
 	pointer-events: none;
 snippet pe:a
-	pointer-events: all;
+	pointer-events: auto;
 snippet pb
 	padding-bottom: ${0};
 snippet pl
