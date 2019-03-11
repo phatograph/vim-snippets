@@ -1,5 +1,13 @@
 extends html
 
+snippet oc
+	onClick={() => {
+		${0}
+	}}
+snippet ue
+	useEffect(() => {
+		${0}
+	}, [])
 snippet cdm
 	componentDidMount = () => {
 		${0}
@@ -115,7 +123,11 @@ snippet lic
 	<li className='${1}'>
 	</li>
 snippet ac
-	<a className='${1}'>${2}</a>
+	<a
+		className='${1}'
+	>
+		${2}
+	</a>
 snippet frag
 	<React.Fragment>${0}
 	</React.Fragment>
@@ -195,6 +207,39 @@ snippet reduxclass:con
 	});
 
 	export default connect(mapStateToProps, mapDispatchToProps)(Class);
+snippet reduxclass:hook
+	import React, {useEffect, useCallback} from 'react';
+	import PropTypes from 'prop-types';
+	import {get} from 'lodash';
+	import className from 'classnames';
+	import {useDispatch, useMappedState} from 'redux-react-hook';
+	import {Link} from 'react-router-dom';
+
+	import {
+		// loadUserCheckIns,
+	} from '../actions'
+
+	const Class = ({
+	}) => {
+		const dispatch = useDispatch();
+
+		// useEffect(() => {
+		//   dispatch(loadUserCheckIns())
+		// }, [])
+
+		// const userCheckIns = useMappedState(useCallback((state) => state.userCheckIns, []));
+
+		return (
+			<div className='Class'>
+				Class
+			</div>
+		);
+	}
+
+	Class.propTypes = {
+	};
+
+	export default Class;
 snippet reactclass
 	import React from 'react';
 	import PropTypes from 'prop-types';
@@ -250,6 +295,26 @@ snippet reactclass:con
 	};
 
 	Class.defaultProps = {
+	};
+
+	export default Class;
+snippet reactclass:hook
+	import React from 'react';
+	import PropTypes from 'prop-types';
+	import {get} from 'lodash';
+	import className from 'classnames';
+	import {Link} from 'react-router-dom';
+
+	const Class = ({
+	}) => {
+		return (
+			<div className='Class'>
+				Class
+			</div>
+		);
+	}
+
+	Class.propTypes = {
 	};
 
 	export default Class;
