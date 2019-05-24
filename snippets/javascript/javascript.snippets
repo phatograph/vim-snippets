@@ -57,13 +57,17 @@ snippet ${
 	${${1}}${0}
 snippet rand
 	~~(Math.random() * ${1:10})
+snippet ga
+	get(${1:x}, '${2}', [])
 snippet gl
-	get(${0}, '${1}', 0).toLocaleString()
-snippet gx
+	get(${1:x}, '${2}', 0).toLocaleString()
+snippet gn
+	get(${1:x}, '${2}', 0)
+snippet g
 	get(${1:x}, '${2}')
 snippet gs
 	get(this.state, '${0}')
-snippet g
+snippet gp
 	get(this.props, '${0}')
 snippet psu
 	import PropTypes from 'prop-types';
@@ -72,6 +76,8 @@ snippet psu
 
 	Class.defaultProps = {
 	};
+snippet cto
+	window.clearTimeout(${0})
 snippet sto
 	window.setTimeout(() => {
 		${0}

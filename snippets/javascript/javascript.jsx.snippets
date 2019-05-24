@@ -4,8 +4,27 @@ snippet oc
 	onClick={() => {
 		${0}
 	}}
-snippet ue
-	useEffect(() => {
+snippet rud
+	const [state, dispatch] = React.useReducer((state, action) => {
+		switch (action.type) {
+			case 'load':
+				return {
+					...state,
+					isLoading: true,
+				}
+			default:
+				return state
+		}
+	}, {
+		isLoading: false,
+		data: null,
+	});
+snippet rur
+	const ${1} = React.useRef(${2})
+snippet rus
+	const [isActive, isActiveSet] = React.useState(false)
+snippet rue
+	React.useEffect(() => {
 		${0}
 	}, [])
 snippet cdm
@@ -27,6 +46,10 @@ snippet Linkparams
 			returnPath: get(this.props, 'location.pathname'),
 		}),
 	}
+snippet importhelper
+	import {
+		t,
+	} from '../lib/helpers'
 snippet importimageloader
 	import ImageLoader from './ImageLoader'
 snippet importaction
@@ -320,11 +343,7 @@ snippet reactclass:hook
 	export default Class;
 snippet ki
 	key={i}
-snippet times
-	{Array.from(Array(7)).map((_, i) => ({
-		${0}
-	}))}
-snippet timesa
+snippet timesd
 	{${0:data}.map((x, i) => (
 		<li key={i}></li>
 	))}
@@ -336,3 +355,9 @@ snippet timesx
 	{Array.from(Array(7)).map((x, i) => (
 		${0}
 	))}
+snippet timesp
+	{get(this.props, '${0}', []).map((x, i) => (
+	))}
+snippet timesf
+	{Array.from(Array(7)).map((x, i) => {
+	})}
