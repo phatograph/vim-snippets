@@ -1,5 +1,165 @@
 extends html
 
+snippet ccss
+	css={{
+		${0}
+	}}
+snippet csmo
+	[media.mobiles]: {
+		${0}
+	},
+snippet csmol
+	[media.mobilesL]: {
+		${0}
+	},
+snippet csta
+	[media.tablets]: {
+		${0}
+	},
+snippet cstal
+	[media.tabletsL]: {
+		${0}
+	},
+snippet cstaxl
+	[media.tabletsL]: {
+		${0}
+	},
+snippet cta:c
+	textAlign: 'center',
+snippet cta:l
+	textAlign: 'left',
+snippet cta:r
+	textAlign: 'right',
+snippet cp
+	padding: '${0}',
+snippet cpt
+	paddingTop: '${0}',
+snippet cpr
+	paddingRight: '${0}',
+snippet cpb
+	paddingBottom: '${0}',
+snippet cpl
+	paddingLeft: '${0}',
+snippet cm
+	margin: '${0}',
+snippet cmt
+	marginTop: '${0}',
+snippet cmr
+	marginRight: '${0}',
+snippet cmb
+	marginBottom: '${0}',
+snippet cml
+	marginLeft: '${0}',
+snippet ch
+	height: '${0}',
+snippet cd
+	display: '${0}',
+snippet cd:n
+	display: 'none',
+snippet cd:b
+	display: 'block',
+snippet cd:f
+	display: 'flex',
+snippet cd:g
+	display: 'grid',
+snippet cgtc
+	gridTemplateColumns: '${0}',
+snippet cgtr
+	gridTemplateRows: '${0}',
+snippet crep
+	repeat(${1:1}, ${2:1fr})
+snippet cmc
+	max-content
+snippet cgg
+	gridGap: '${0}',
+snippet cf
+	flex: '0 0 ${0}',
+snippet cf:1
+	flex: '1',
+snippet cgx
+	calc(var(--global-space) * ${0})
+snippet cg2
+	calc(var(--global-space) * 2)
+snippet cg
+	calc(var(--global-space) * 1)
+snippet cg5
+	calc(var(--global-space) * .5)
+snippet cg25
+	calc(var(--global-space) * .25)
+snippet cg15
+	calc(var(--global-space) * .15)
+snippet cbgc
+	backgroundColor: '${0}',
+snippet cwhs:nw
+	whiteSpace: 'nowrap',
+snippet cov:h
+	overflow: 'hidden',
+snippet cto:e
+	textOverflow: 'ellipsis',
+snippet cc
+	color: '${0}',
+snippet ctd:u
+	textDecoration: 'underline',
+snippet cff
+	fontFamily: '${0}',
+snippet cfz
+	fontSize: '${0}',
+snippet cfw
+	fontWeight: '${0}',
+snippet cfw:b
+	fontWeight: 'bold',
+snippet cbdrz
+	borderRadius: '${0}',
+snippet cbd
+	border: '${0}',
+snippet cbdt
+	borderTop: '${0}',
+snippet cbdr
+	borderRight: '${0}',
+snippet cbdb
+	borderBottom: '${0}',
+snippet cbdl
+	borderLeft: '${0}',
+snippet cpos:r
+	position: 'relative',
+snippet cpos:f
+	position: 'fixed',
+snippet cpos:a
+	position: 'absolute',
+snippet ct
+	top: '${0}',
+snippet cr
+	right: '${0}',
+snippet cb
+	bottom: '${0}',
+# snippet cl
+# 	left: '${0}',
+snippet cai:c
+	alignItems: 'center',
+snippet cjc:c
+	justifyContent: 'center',
+snippet cbefore
+	'&::before': {
+		content: '""',
+		display: 'block',
+		width: '${1}px',
+		height: '${2}px',
+		backgroundImage: `url(${3})`,
+		backgroundPosition: 'center center',
+		backgroundSize: 'contain',
+		backgroundRepeat: 'no-repeat',
+	},
+snippet cafter
+	'&::after': {
+		content: '""',
+		display: 'block',
+		width: '${1}px',
+		height: '${2}px',
+		backgroundImage: `url(${3})`,
+		backgroundPosition: 'center center',
+		backgroundSize: 'contain',
+		backgroundRepeat: 'no-repeat',
+	},
 snippet oc
 	onClick={() => {
 		${0}
