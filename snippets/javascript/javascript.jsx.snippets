@@ -1,9 +1,18 @@
 extends html
 
+snippet caniset
+	animationFillMode: 'forwards',
+	animationName: '${0}',
+	animationDuration: '400ms',
+snippet c.
+	'${0:> *}': {
+	},
 snippet ccss
 	css={{
 		${0}
 	}}
+snippet cc-
+	var(--color-${0})
 snippet csmo
 	[media.mobiles]: {
 		${0}
@@ -50,18 +59,24 @@ snippet cmb
 	marginBottom: '${0}',
 snippet cml
 	marginLeft: '${0}',
+snippet cw
+	width: '${0}',
 snippet ch
 	height: '${0}',
 snippet cd
 	display: '${0}',
 snippet cd:n
 	display: 'none',
+snippet cd:ib
+	display: 'inline-block',
 snippet cd:b
 	display: 'block',
 snippet cd:f
 	display: 'flex',
 snippet cd:g
 	display: 'grid',
+	gridTemplateColumns: '${0}',
+	gridGap: 'calc(var(--global-space) * 1)',
 snippet cgtc
 	gridTemplateColumns: '${0}',
 snippet cgtr
@@ -71,7 +86,9 @@ snippet crep
 snippet cmc
 	max-content
 snippet cgg
-	gridGap: '${0}',
+	gridGap: '${0:calc(var(--global-space) * 1)}',
+snippet cga
+	gridArea: '1 / 1 / 2 / 2',
 snippet cf
 	flex: '0 0 ${0}',
 snippet cf:1
@@ -90,16 +107,43 @@ snippet cg15
 	calc(var(--global-space) * .15)
 snippet cbgc
 	backgroundColor: '${0}',
+snippet cbgi
+	backgroundImage: 'url(${0})',
+snippet cbgset
+	backgroundImage: 'url(${0})',
+	backgroundPosition: 'center center',
+	backgroundSize: 'contain',
+	backgroundRepeat: 'no-repeat',
 snippet cwhs:nw
 	whiteSpace: 'nowrap',
 snippet cov:h
 	overflow: 'hidden',
 snippet cto:e
 	textOverflow: 'ellipsis',
+snippet cts
+	transition: '${1:opacity 0.4s}${2:, transform 0.4s}',
+snippet cts:o
+	transition: '${1:opacity 0.4s}',
+snippet cts:t
+	transition: '${1:transform 0.4s}',
+snippet ctf
+	transform: '${0}',
+snippet ctly
+	translateY(${0})
+snippet ctlx
+	translateX(${0})
+snippet clh
+	lineHeight: '${0}',
+snippet cpe
+	pointerEvents: 'none',
+snippet cpe:a
+	pointerEvents: 'auto',
 snippet cc
 	color: '${0}',
 snippet ctd:u
 	textDecoration: 'underline',
+snippet ctt:u
+	textTransform: 'uppercase',
 snippet cff
 	fontFamily: '${0}',
 snippet cfz
@@ -112,6 +156,8 @@ snippet cbdrz
 	borderRadius: '${0}',
 snippet cbd
 	border: '${0}',
+snippet cbdc
+	borderColor: '${0}',
 snippet cbdt
 	borderTop: '${0}',
 snippet cbdr
@@ -126,25 +172,45 @@ snippet cpos:f
 	position: 'fixed',
 snippet cpos:a
 	position: 'absolute',
+snippet cnlc
+	'&:not(:last-child)': {
+		${0}
+	},
+snippet cz
+	zIndex: '${0}',
 snippet ct
 	top: '${0}',
 snippet cr
 	right: '${0}',
 snippet cb
 	bottom: '${0}',
-# snippet cl
-# 	left: '${0}',
+snippet cll
+	left: '${0}',
 snippet cai:c
 	alignItems: 'center',
+snippet cas:s
+	alignSelf: 'start',
+snippet cas:c
+	alignSelf: 'center',
+snippet cas:e
+	alignSelf: 'end',
 snippet cjc:c
 	justifyContent: 'center',
+snippet cjc:sb
+	justifyContent: 'space-between',
+snippet cjs:s
+	justifySelf: 'start',
+snippet cjs:c
+	justifySelf: 'center',
+snippet cjs:e
+	justifySelf: 'end',
 snippet cbefore
 	'&::before': {
 		content: '""',
 		display: 'block',
 		width: '${1}px',
 		height: '${2}px',
-		backgroundImage: `url(${3})`,
+		backgroundImage: 'url(${3})',
 		backgroundPosition: 'center center',
 		backgroundSize: 'contain',
 		backgroundRepeat: 'no-repeat',
@@ -155,11 +221,22 @@ snippet cafter
 		display: 'block',
 		width: '${1}px',
 		height: '${2}px',
-		backgroundImage: `url(${3})`,
+		backgroundImage: 'url(${3})',
 		backgroundPosition: 'center center',
 		backgroundSize: 'contain',
 		backgroundRepeat: 'no-repeat',
 	},
+snippet cstyle
+	let _style = {
+	}
+
+	if () {
+		_style = {
+			..._style,
+		}
+	}
+snippet cop
+	opacity: '${0}',
 snippet oc
 	onClick={() => {
 		${0}
@@ -178,11 +255,11 @@ snippet rud
 	}, {
 		isLoading: false,
 		data: null,
-	});
+	})
 snippet rur
 	const ${1} = React.useRef(${2})
 snippet rus
-	const [isActive, isActiveSet] = React.useState(false)
+	const [${1:isActive}, isActiveSet] = React.useState(false)
 snippet rue
 	React.useEffect(() => {
 		${0}
@@ -206,8 +283,10 @@ snippet Linkparams
 			returnPath: get(this.props, 'location.pathname'),
 		}),
 	}
+snippet importget
+	import {get} from 'lodash'
 snippet importimage
-	import qr from '../../assets/images/qr';
+	import qr from '../../assets/images/qr'
 snippet importhelper
 	import {
 		t,
@@ -232,20 +311,47 @@ snippet thens
 		}
 	})
 snippet dlc
-	<dl className='${0}'>
+	<dl
+		className='${1}'
+	>
+		${2}
 	</dl>
 snippet h1c
-	<h1 className='${1}'>${2}</h1>
+	<h1
+		className='${1}'
+	>
+		${2}
+	</h1>
 snippet h2c
-	<h2 className='${1}'>${2}</h2>
+	<h2
+		className='${1}'
+	>
+		${2}
+	</h2>
 snippet h3c
-	<h3 className='${1}'>${2}</h3>
+	<h3
+		className='${1}'
+	>
+		${2}
+	</h3>
 snippet h4c
-	<h4 className='${1}'>${2}</h4>
+	<h4
+		className='${1}'
+	>
+		${2}
+	</h4>
 snippet h5c
-	<h5 className='${1}'>${2}</h5>
+	<h5
+		className='${1}'
+	>
+		${2}
+	</h5>
 snippet h6c
-	<h6 className='${1}'>${2}</h6>
+	<h6
+		className='${1}'
+	>
+		${2}
+	</h6>
 snippet onEvent
 	_handlers = {
 		onEvent: {},
@@ -295,17 +401,33 @@ snippet ano
 		)
 	})()}
 snippet pc
-	<p className='${1}'>${2}</p>
+	<p
+		className='${1}'
+	>
+		${2}
+	</p>
 snippet divc
-	<div className='${1}'>
+	<div
+		className='${1}'
+	>
 	</div>
 snippet spanc
-	<span className='${1}'>${2}</span>
+	<span
+		className='${1}'
+	>
+		${2}
+	</span>
 snippet ulc
-	<ul className='${1}'>
+	<ul
+		className='${1}'
+	>
+		${2}
 	</ul>
 snippet lic
-	<li className='${1}'>
+	<li
+		className='${1}'
+	>
+		${2}
 	</li>
 snippet ac
 	<a
@@ -321,53 +443,53 @@ snippet dangerous
 snippet tbind
 	(() => { ${0} }).bind(this)
 snippet reduxclass
-	import React from 'react';
-	import PropTypes from 'prop-types';
-	import {get} from 'lodash';
-	import {connect} from 'react-redux';
-	import className from 'classnames';
-	import {Link} from 'react-router-dom';
+	import React from 'react'
+	import PropTypes from 'prop-types'
+	import {get} from 'lodash'
+	import {connect} from 'react-redux'
+	import className from 'classnames'
+	import {Link} from 'react-router-dom'
 
 	class ${0}Class extends React.Component {
 		static propTypes = {
-		};
+		}
 
 		static defaultProps = {
-		};
+		}
 
 		state = {
-		};
+		}
 
 		render = () => {
 			return (
 				<div className='Class'>
 					Class
 				</div>
-			);
+			)
 		}
 	}
 
 	const mapStateToProps = (state) => ({
-	});
+	})
 
 	const mapDispatchToProps = (dispatch) => ({
-	});
+	})
 
-	export default connect(mapStateToProps, mapDispatchToProps)(Class);
+	export default connect(mapStateToProps, mapDispatchToProps)(Class)
 snippet reduxclass:con
-	import React from 'react';
-	import PropTypes from 'prop-types';
-	import {get} from 'lodash';
-	import {connect} from 'react-redux';
-	import className from 'classnames';
-	import {Link} from 'react-router-dom';
+	import React from 'react'
+	import PropTypes from 'prop-types'
+	import {get} from 'lodash'
+	import {connect} from 'react-redux'
+	import className from 'classnames'
+	import {Link} from 'react-router-dom'
 
 	class ${0}Class extends React.Component {
 		constructor(props) {
-			super(props);
+			super(props)
 
 			this.state = {
-			};
+			}
 		}
 
 		render() {
@@ -375,30 +497,30 @@ snippet reduxclass:con
 				<div className='Class'>
 					Class
 				</div>
-			);
+			)
 		}
 	}
 
 	Class.propTypes = {
-	};
+	}
 
 	Class.defaultProps = {
-	};
+	}
 
 	const mapStateToProps = (state) => ({
-	});
+	})
 
 	const mapDispatchToProps = (dispatch) => ({
-	});
+	})
 
-	export default connect(mapStateToProps, mapDispatchToProps)(Class);
+	export default connect(mapStateToProps, mapDispatchToProps)(Class)
 snippet reduxclass:hook
-	import React, {useEffect, useCallback} from 'react';
-	import PropTypes from 'prop-types';
-	import {get} from 'lodash';
-	import className from 'classnames';
-	import {useDispatch, useMappedState} from 'redux-react-hook';
-	import {Link} from 'react-router-dom';
+	import React, {useEffect, useCallback} from 'react'
+	import PropTypes from 'prop-types'
+	import {get} from 'lodash'
+	import className from 'classnames'
+	import {useDispatch, useMappedState} from 'redux-react-hook'
+	import {Link} from 'react-router-dom'
 
 	import {
 		// loadUserCheckIns,
@@ -406,65 +528,65 @@ snippet reduxclass:hook
 
 	const Class = ({
 	}) => {
-		const dispatch = useDispatch();
+		const dispatch = useDispatch()
 
 		// useEffect(() => {
 		//   dispatch(loadUserCheckIns())
 		// }, [])
 
-		// const userCheckIns = useMappedState(useCallback((state) => state.userCheckIns, []));
+		// const userCheckIns = useMappedState(useCallback((state) => state.userCheckIns, []))
 
 		return (
 			<div className='Class'>
 				Class
 			</div>
-		);
+		)
 	}
 
 	Class.propTypes = {
-	};
+	}
 
-	export default Class;
+	export default Class
 snippet reactclass
-	import React from 'react';
-	import PropTypes from 'prop-types';
-	import {get} from 'lodash';
-	import className from 'classnames';
-	import {Link} from 'react-router-dom';
+	import React from 'react'
+	import PropTypes from 'prop-types'
+	import {get} from 'lodash'
+	import className from 'classnames'
+	import {Link} from 'react-router-dom'
 
 	class ${0}Class extends React.Component {
 		static propTypes = {
-		};
+		}
 
 		static defaultProps = {
-		};
+		}
 
 		state = {
-		};
+		}
 
 		render = () => {
 			return (
 				<div className='Class'>
 					Class
 				</div>
-			);
+			)
 		}
 	}
 
-	export default Class;
+	export default Class
 snippet reactclass:con
-	import React from 'react';
-	import PropTypes from 'prop-types';
-	import {get} from 'lodash';
-	import className from 'classnames';
-	import {Link} from 'react-router-dom';
+	import React from 'react'
+	import PropTypes from 'prop-types'
+	import {get} from 'lodash'
+	import className from 'classnames'
+	import {Link} from 'react-router-dom'
 
 	class ${0}Class extends React.Component {
 		constructor(props) {
-			super(props);
+			super(props)
 
 			this.state = {
-			};
+			}
 		}
 
 		render() {
@@ -472,23 +594,23 @@ snippet reactclass:con
 				<div className='Class'>
 					Class
 				</div>
-			);
+			)
 		}
 	}
 
 	Class.propTypes = {
-	};
+	}
 
 	Class.defaultProps = {
-	};
+	}
 
-	export default Class;
+	export default Class
 snippet reactclass:hook
-	import React from 'react';
-	import PropTypes from 'prop-types';
-	import {get} from 'lodash';
-	import className from 'classnames';
-	import {Link} from 'react-router-dom';
+	import React from 'react'
+	import PropTypes from 'prop-types'
+	import {get} from 'lodash'
+	import className from 'classnames'
+	import {Link} from 'react-router-dom'
 
 	const Class = ({
 	}) => {
@@ -496,22 +618,28 @@ snippet reactclass:hook
 			<div className='Class'>
 				Class
 			</div>
-		);
+		)
 	}
 
 	Class.propTypes = {
-	};
+	}
 
-	export default Class;
+	export default Class
 snippet ki
 	key={i}
 snippet timesd
 	{${0:data}.map((x, i) => (
-		<li key={i}></li>
+		<div
+			key={i}
+		>
+		</div>
 	))}
 snippet timesg
 	{get(this.props, '${0}', []).map((x, i) => (
-		<div key={i}></div>
+		<div
+			key={i}
+		>
+		</div>
 	))}
 snippet timesx
 	{Array.from(Array(7)).map((x, i) => (

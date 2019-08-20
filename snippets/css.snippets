@@ -642,6 +642,8 @@ snippet d:cp
 	display: compact;
 snippet d:g
 	display: grid;
+	grid-template-columns: ${0};
+	grid-gap: calc(var(--global-space) * 1);
 snippet d:g:fit
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(1px, max-content));
