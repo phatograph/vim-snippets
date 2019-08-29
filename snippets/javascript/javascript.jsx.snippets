@@ -4,6 +4,12 @@ snippet caniset
 	animationFillMode: 'forwards',
 	animationName: '${0}',
 	animationDuration: '400ms',
+snippet cgs
+	var(--global-space)
+snippet cv-
+	var(--${0})
+snippet c!
+	!important
 snippet c.
 	'${0:> *}': {
 	},
@@ -305,11 +311,22 @@ snippet revent
 				return state
 		}
 	}
+snippet then
+	.then(() => {
+		${0}
+	})
 snippet thens
 	.then((res) => {
 		if (get(res, 'type', '').endsWith('_SUCCESS')) {
+			${0}
 		}
 	})
+snippet ic
+	<i
+		className='${1}'
+	>
+		${2}
+	/>
 snippet dlc
 	<dl
 		className='${1}'
@@ -629,21 +646,12 @@ snippet ki
 	key={i}
 snippet timesd
 	{${0:data}.map((x, i) => (
-		<div
-			key={i}
-		>
-		</div>
 	))}
 snippet timesg
 	{get(this.props, '${0}', []).map((x, i) => (
-		<div
-			key={i}
-		>
-		</div>
 	))}
 snippet timesx
 	{Array.from(Array(7)).map((x, i) => (
-		${0}
 	))}
 snippet timesp
 	{get(this.props, '${0}', []).map((x, i) => (

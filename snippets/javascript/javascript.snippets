@@ -4,6 +4,13 @@ snippet ok
 	${1}: ${2:''},
 snippet co
 	const ${1} = ${2}
+snippet cod
+	const data = [
+		{
+			label: '',
+			key: '',
+		},
+	]
 snippet let
 	let ${1} = ${0};
 snippet im "import xyz from 'xyz'"
@@ -66,6 +73,8 @@ snippet gl
 snippet gn
 	get(${1:x}, '${2}', 0)
 snippet g
+	get(${1:x}, '${2}')
+snippet gx
 	get(${1:x}, '${2}')
 snippet gs
 	get(this.state, '${0}')
