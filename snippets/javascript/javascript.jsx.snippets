@@ -1,5 +1,26 @@
 extends html
 
+snippet apromise
+	await Promise.all([
+	])
+snippet anitween
+	await animation.start({
+		transition: {
+			delay: 0.5,
+			duration: 0.5,
+			ease: 'easeInOut',
+		},
+	})
+snippet anispring
+	await animation.start({
+		transition: {
+			delay: 0.5,
+			type: 'spring',
+			damping: 100,
+			stiffness: 500,
+			velocity: 10,
+		},
+	})
 snippet caniset
 	animationFillMode: 'forwards',
 	animationName: '${0}',
@@ -13,6 +34,10 @@ snippet c!
 snippet c.
 	'${0:> *}': {
 	},
+snippet cstyle
+	style={{
+		${0}
+	}}
 snippet ccss
 	css={{
 		${0}
@@ -459,13 +484,13 @@ snippet dangerous
 	dangerouslySetInnerHTML={{__html: ${0}}}
 snippet tbind
 	(() => { ${0} }).bind(this)
-snippet reduxclass
+snippet reduxclass:class
 	import React from 'react'
 	import PropTypes from 'prop-types'
 	import {get} from 'lodash'
 	import {connect} from 'react-redux'
 	import className from 'classnames'
-	import {Link} from 'react-router-dom'
+	// import {Link} from 'react-router-dom'
 
 	class ${0}Class extends React.Component {
 		static propTypes = {
@@ -499,7 +524,7 @@ snippet reduxclass:con
 	import {get} from 'lodash'
 	import {connect} from 'react-redux'
 	import className from 'classnames'
-	import {Link} from 'react-router-dom'
+	// import {Link} from 'react-router-dom'
 
 	class ${0}Class extends React.Component {
 		constructor(props) {
@@ -531,13 +556,13 @@ snippet reduxclass:con
 	})
 
 	export default connect(mapStateToProps, mapDispatchToProps)(Class)
-snippet reduxclass:hook
+snippet reduxclass
 	import React, {useEffect, useCallback} from 'react'
 	import PropTypes from 'prop-types'
 	import {get} from 'lodash'
 	import className from 'classnames'
 	import {useDispatch, useMappedState} from 'redux-react-hook'
-	import {Link} from 'react-router-dom'
+	// import {Link} from 'react-router-dom'
 
 	import {
 		// loadUserCheckIns,
@@ -564,12 +589,12 @@ snippet reduxclass:hook
 	}
 
 	export default Class
-snippet reactclass
+snippet reactclass:class
 	import React from 'react'
 	import PropTypes from 'prop-types'
 	import {get} from 'lodash'
 	import className from 'classnames'
-	import {Link} from 'react-router-dom'
+	// import {Link} from 'react-router-dom'
 
 	class ${0}Class extends React.Component {
 		static propTypes = {
@@ -596,7 +621,7 @@ snippet reactclass:con
 	import PropTypes from 'prop-types'
 	import {get} from 'lodash'
 	import className from 'classnames'
-	import {Link} from 'react-router-dom'
+	// import {Link} from 'react-router-dom'
 
 	class ${0}Class extends React.Component {
 		constructor(props) {
@@ -622,12 +647,12 @@ snippet reactclass:con
 	}
 
 	export default Class
-snippet reactclass:hook
+snippet reactclass
 	import React from 'react'
 	import PropTypes from 'prop-types'
 	import {get} from 'lodash'
 	import className from 'classnames'
-	import {Link} from 'react-router-dom'
+	// import {Link} from 'react-router-dom'
 
 	const Class = ({
 	}) => {
@@ -644,8 +669,11 @@ snippet reactclass:hook
 	export default Class
 snippet ki
 	key={i}
+snippet kj
+	key={j}
 snippet timesd
-	{${0:data}.map((x, i) => (
+	{${1:data}.map((x, i) => (
+		${2}
 	))}
 snippet timesg
 	{get(this.props, '${0}', []).map((x, i) => (

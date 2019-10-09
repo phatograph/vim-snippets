@@ -112,12 +112,12 @@ snippet __
 snippet --
 	&--${1} {
 	}
-snippet gs
-	var(--global-space)
 snippet ca
 	calc(${0})
 snippet cav
 	calc(var(--${0}))
+snippet gs
+	var(--global-space)
 snippet gx
 	calc(var(--global-space) * ${0})
 snippet g25
@@ -134,6 +134,24 @@ snippet g2
 	calc(var(--global-space) * 2)
 snippet g3
 	calc(var(--global-space) * 3)
+snippet ogs
+	$global-space
+snippet ogx
+	($global-space * ${0})
+snippet og25
+	($global-space * .25)
+snippet og5
+	($global-space * .5)
+snippet og75
+	($global-space * .75)
+snippet og
+	($global-space * 1)
+snippet og15
+	($global-space * 1.5)
+snippet og2
+	($global-space * 2)
+snippet og3
+	($global-space * 3)
 snippet . "selector { }"
 	${1} {
 		${0:${VISUAL}}
@@ -310,7 +328,7 @@ snippet bgc
 snippet bgc:t
 	background-color: transparent;
 snippet bgi
-	background-image: url(${0});
+	background-image: url(/static/images/${0}.svg);
 snippet bgir
 	background-image: url(image-path("${0}"));
 snippet bgi:n
