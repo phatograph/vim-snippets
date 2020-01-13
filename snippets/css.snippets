@@ -2,19 +2,19 @@ snippet wb
 	word-break: break-all;
 snippet ga
 	grid-area: 1 / 1 / 2 / 2;
-snippet __wrapper
+snippet _wrapper
 	&__wrapper {${0}
 	}
-snippet __ul
+snippet _ul
 	&__ul {${0}
 	}
-snippet __li
+snippet _li
 	&__li {${0}
 	}
-snippet __a
+snippet _a
 	&__a {${0}
 	}
-snippet --active
+snippet -active
 	&--active {${0}
 	}
 snippet trbl
@@ -106,10 +106,10 @@ snippet each
 snippet while
 	@while ${1:$i} ${2:>} ${3:0} {
 		${0}
-snippet __
+snippet _
 	&__${1} {
 	}
-snippet --
+snippet -
 	&--${1} {
 	}
 snippet ca
@@ -226,6 +226,10 @@ snippet @i
 snippet @m "@media mediatype { }"
 	@media ${1:print} {
 		${0:${VISUAL}}
+	}
+snippet smos
+	@media (max-width: $screen-mobiles-s) {
+		${0}
 	}
 snippet smo
 	@media (max-width: $screen-mobiles) {
@@ -1271,9 +1275,9 @@ snippet va:tt
 	vertical-align: text-top;
 snippet va:t
 	vertical-align: top;
-snippet v-
+snippet v
 	var(--${0})
-snippet c-
+snippet vc
 	var(--c-${0})
 snippet vi
 	visibility: ${0};

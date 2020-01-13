@@ -268,9 +268,17 @@ snippet cstyle
 	}
 snippet cop
 	opacity: '${0}',
-snippet oc
+snippet onc
 	onClick={() => {
 		${0}
+	}}
+snippet onch
+	onChange={(e) => {
+		${0}
+	}}
+snippet ons
+	onSubmit={(e) => {
+		e.preventDefault()
 	}}
 snippet rud
 	const [state, dispatch] = React.useReducer((state, action) => {
@@ -448,6 +456,11 @@ snippet pc
 	>
 		${2}
 	</p>
+snippet imgc
+	<img
+		className='${1}'
+		src=''
+	/>
 snippet divc
 	<div
 		className='${1}'
@@ -672,8 +685,7 @@ snippet ki
 snippet kj
 	key={j}
 snippet timesd
-	{${1:data}.map((x, i) => (
-		${2}
+	{${0:data}.map((x, i) => (
 	))}
 snippet timesg
 	{get(this.props, '${0}', []).map((x, i) => (
