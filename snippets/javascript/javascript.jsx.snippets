@@ -1,5 +1,8 @@
 extends html
 
+snippet usetheme
+	import { useTheme } from 'emotion-theming'
+	const { color } = useTheme()
 snippet apromise
 	await Promise.all([
 	])
@@ -27,7 +30,7 @@ snippet caniset
 	animationDuration: '400ms',
 snippet cgs
 	var(--global-space)
-snippet cv-
+snippet cv
 	var(--${0})
 snippet c!
 	!important
@@ -90,6 +93,24 @@ snippet cmb
 	marginBottom: '${0}',
 snippet cml
 	marginLeft: '${0}',
+snippet ccur
+	cursor: '${0}',
+snippet ccur:a
+	cursor: 'auto',
+snippet ccur:c
+	cursor: 'crosshair',
+snippet ccur:d
+	cursor: 'default',
+snippet ccur:ha
+	cursor: 'hand',
+snippet ccur:he
+	cursor: 'help',
+snippet ccur:m
+	cursor: 'move',
+snippet ccur:p
+	cursor: 'pointer',
+snippet ccur:t
+	cursor: 'text',
 snippet cw
 	width: '${0}',
 snippet ch
@@ -120,10 +141,16 @@ snippet cgg
 	gridGap: '${0:calc(var(--global-space) * 1)}',
 snippet cga
 	gridArea: '1 / 1 / 2 / 2',
+snippet cgc
+	gridColumn: '${1:1 / 3}',
+snippet cgr
+	gridRow: '${1:1 / 3}',
 snippet cf
 	flex: '0 0 ${0}',
 snippet cf:1
 	flex: '1',
+snippet cfd
+	flexDirection: 'column',
 snippet cgx
 	calc(var(--global-space) * ${0})
 snippet cg2
@@ -217,8 +244,18 @@ snippet cb
 	bottom: '${0}',
 snippet cll
 	left: '${0}',
+snippet cai
+	alignItems: '${0}',
 snippet cai:c
 	alignItems: 'center',
+snippet cai:fs
+	alignItems: 'flex-start',
+snippet cai:fe
+	alignItems: 'flex-end',
+snippet cai:s
+	alignItems: 'start',
+snippet cai:e
+	alignItems: 'end',
 snippet cas:s
 	alignSelf: 'start',
 snippet cas:c
@@ -257,6 +294,10 @@ snippet cafter
 		backgroundSize: 'contain',
 		backgroundRepeat: 'no-repeat',
 	},
+snippet c:h
+	'&:hover': {
+		${0}
+	}
 snippet cstyle
 	let _style = {
 	}
