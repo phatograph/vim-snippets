@@ -1,5 +1,21 @@
 extends html
 
+snippet cca
+	calc(${0})
+snippet cls
+	letterSpacing: '${0}',
+snippet cmah
+	maxHeight: '${0}',
+snippet cmah:n
+	maxHeight: 'none',
+snippet cmaw
+	maxWidth: '${0}',
+snippet cmaw:n
+	maxWidth: 'none',
+snippet cmih
+	minHeight: '${0}',
+snippet cmiw
+	minWidth: '${0}',
 snippet usetheme
 	import { useTheme } from 'emotion-theming'
 	const { color } = useTheme()
@@ -297,7 +313,7 @@ snippet cafter
 snippet c:h
 	'&:hover': {
 		${0}
-	}
+	},
 snippet cstyle
 	let _style = {
 	}
