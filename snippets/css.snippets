@@ -283,30 +283,7 @@ snippet mxh
 	@media (max-height: ${1}) {
 		${0}
 	}
-snippet as
-	align-self: ${0};
-snippet as:c
-	align-self: center;
-snippet as:s
-	align-self: start;
-snippet as:e
-	align-self: end;
-snippet as:fs
-	align-self: flex-start;
-snippet as:fe
-	align-self: flex-end;
-snippet ai
-	align-items: ${0};
-snippet ai:c
-	align-items: center;
-snippet ai:fs
-	align-items: flex-start;
-snippet ai:fe
-	align-items: flex-end;
-snippet ai:s
-	align-items: start;
-snippet ai:e
-	align-items: end;
+
 snippet bgset
 	background-position: center center;
 	background-size: cover;
@@ -856,32 +833,111 @@ snippet h
 	height: ${0};
 snippet h:a
 	height: auto;
-snippet ji
-	justify-items: ${0};
-snippet ji:c
-	justify-items: center;
+
+snippet ac
+	align-content: ${0};
+snippet ac:c
+	align-content: center;
+snippet ac:s
+	align-content: start;
+snippet ac:e
+	align-content: end;
+snippet ac:fs
+	align-content: flex-start;
+snippet ac:fe
+	align-content: flex-end;
+snippet ac:sb
+	align-content: space-between;
+snippet ac:sa
+	align-content: space-around;
+snippet ac:se
+	align-content: space-evenly;
+snippet ac:st
+	align-content: stretch;
+
+snippet ai
+	align-items: ${0};
+snippet ai:c
+	align-items: center;
+snippet ai:s
+	align-items: start;
+snippet ai:e
+	align-items: end;
+snippet ai:fs
+	align-items: flex-start;
+snippet ai:fe
+	align-items: flex-end;
+
+snippet as
+	align-self: ${0};
+snippet as:c
+	align-self: center;
+snippet as:s
+	align-self: start;
+snippet as:e
+	align-self: end;
+snippet as:fs
+	align-self: flex-start;
+snippet as:fe
+	align-self: flex-end;
+
 snippet jc
 	justify-content: ${0};
 snippet jc:c
 	justify-content: center;
-snippet jc:fe
-	justify-content: flex-end;
-snippet jc:sb
-	justify-content: space-between;
-snippet jc:se
-	justify-content: space-evenly;
 snippet jc:s
 	justify-content: start;
 snippet jc:e
 	justify-content: end;
+snippet jc:fs
+	justify-content: flex-end;
+snippet jc:fe
+	justify-content: flex-end;
+snippet jc:st
+	justify-content: stretch;
+snippet jc:sb
+	justify-content: space-between;
+snippet jc:se
+	justify-content: space-evenly;
+snippet jc:sa
+	justify-content: space-around;
+
+snippet ji
+	justify-items: ${0};
+snippet ji:c
+	justify-items: center;
+snippet ji:s
+	justify-items: start;
+snippet ji:e
+	justify-items: end;
+snippet ji:fs
+	justify-items: flex-start;
+snippet ji:fe
+	justify-items: flex-end;
+snippet ji:st
+	justify-items: stretch;
+snippet ji:l
+	justify-items: left;
+snippet ji:r
+	justify-items: right;
+
 snippet js
 	justify-self: ${0};
 snippet js:c
 	justify-self: center;
-snippet js:e
-	justify-self: end;
 snippet js:s
 	justify-self: start;
+snippet js:e
+	justify-self: end;
+snippet js:fs
+	justify-self: flex-start;
+snippet js:fe
+	justify-self: flex-end;
+snippet js:l
+	justify-self: left;
+snippet js:r
+	justify-self: right;
+
 snippet l
 	left: ${0};
 snippet l:a
