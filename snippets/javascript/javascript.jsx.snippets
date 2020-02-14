@@ -1,5 +1,18 @@
 extends html
 
+snippet cwob
+	wordBreak: '${0}',
+snippet cwob:ba
+	wordBreak: 'break-all',
+snippet cwob:bs
+	wordBreak: 'break-strict',
+snippet cwob:k
+	wordBreak: 'keep-all',
+snippet cwob:l
+	wordBreak: 'loose',
+snippet cwob:n
+	wordBreak: 'normal',
+
 snippet cca
 	calc(${0})
 snippet cls
@@ -63,6 +76,28 @@ snippet ccss
 	}}
 snippet cc-
 	var(--color-${0})
+
+snippet csxs
+	[media.xs]: {
+		${0}
+	},
+snippet cssm
+	[media.sm]: {
+		${0}
+	},
+snippet csmd
+	[media.md]: {
+		${0}
+	},
+snippet cslg
+	[media.lg]: {
+		${0}
+	},
+snippet csxl
+	[media.xl]: {
+		${0}
+	},
+
 snippet csmo
 	[media.mobiles]: {
 		${0}
@@ -83,6 +118,7 @@ snippet cstaxl
 	[media.tabletsL]: {
 		${0}
 	},
+
 snippet cta:c
 	textAlign: 'center',
 snippet cta:l
@@ -191,8 +227,14 @@ snippet cbgset
 	backgroundRepeat: 'no-repeat',
 snippet cwhs:nw
 	whiteSpace: 'nowrap',
+snippet cov:v
+	overflow: 'visible',
 snippet cov:h
 	overflow: 'hidden',
+snippet cov:s
+	WebkitOverflowScrolling: 'touch',
+	overflowScrolling: 'touch',
+	overflow: 'scroll',
 snippet cto:e
 	textOverflow: 'ellipsis',
 snippet cts
