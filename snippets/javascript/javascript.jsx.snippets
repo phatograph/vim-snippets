@@ -534,8 +534,6 @@ snippet thens
 snippet ic
 	<i
 		className='${1}'
-	>
-		${2}
 	/>
 snippet dlc
 	<dl
@@ -620,6 +618,8 @@ snippet tsspc
 	}), () => {})
 snippet t
 	t('${1}')
+snippet t2
+	t(currentLocale, '${1}')
 snippet ref
 	ref={el => this.$el = el}
 snippet c
@@ -647,6 +647,12 @@ snippet divc
 		className='${1}'
 	>
 	</div>
+snippet smallc
+	<small
+		className='${1}'
+	>
+		${2}
+	</small>
 snippet spanc
 	<span
 		className='${1}'
