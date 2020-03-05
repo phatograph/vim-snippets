@@ -4,6 +4,8 @@
 extends html
 
 # Rails *****************************
+snippet cn
+	<%= classname("${1}", {}) %>
 snippet iff
 	<% if ${1:false} %>
 		${0}
@@ -16,6 +18,8 @@ snippet rco:p
 	}, {prerender: true}) %>
 snippet tt
 	<%= t("${0}") %>
+snippet tts
+	<%= t("${0}").html_safe %>
 snippet cl
 	:class => '${1}'
 snippet sym
