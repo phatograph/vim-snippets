@@ -885,12 +885,31 @@ snippet kj
 snippet timesd
 	{${0:data}.map((x, i) => (
 	))}
+snippet timesdk
+	{[
+		{
+			key: '${0}',
+		},
+	].map((x, i) => (
+		<div
+			key={i}
+		>
+		</div>
+	))}
 snippet timesdl
 	{[
 		{
-			label: '${0}',
+			dt: '${0}',
+			dd: '${0}',
 		},
 	].map((x, i) => (
+		<div
+			className=''
+			key={i}
+		>
+			<dt className=''>{get(x, 'dt')}</dt>
+			<dd className=''>{get(x, 'dd')}</dd>
+		</div>
 	))}
 snippet timesg
 	{get(this.props, '${0}', []).map((x, i) => (
