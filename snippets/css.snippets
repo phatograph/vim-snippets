@@ -29,6 +29,20 @@ snippet _li
 snippet _a
 	&__a {${0}
 	}
+snippet _h1
+	&__h1 {
+		&__a {
+			display: block;
+			width: 137px;
+			height: 32px;
+			background-position: center center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-image: url(image-path('app/FormsNew__header__h1__a.svg'));
+			text-indent: -99999px;
+			font-size: 0;
+		}
+	}
 snippet _p
 	&__p {${0}
 	}
@@ -150,7 +164,7 @@ snippet cav
 snippet gs
 	var(--global-space)
 snippet gx
-	calc(var(--global-space) * ${0})
+	calc(var(--global-space) * ${1:5})${2}
 snippet g25
 	calc(var(--global-space) * .25)
 snippet g5
@@ -167,16 +181,6 @@ snippet g3
 	calc(var(--global-space) * 3)
 snippet g4
 	calc(var(--global-space) * 4)
-snippet g5
-	calc(var(--global-space) * 5)
-snippet g6
-	calc(var(--global-space) * 6)
-snippet g7
-	calc(var(--global-space) * 7)
-snippet g8
-	calc(var(--global-space) * 8)
-snippet g9
-	calc(var(--global-space) * 9)
 snippet ogs
 	$global-space
 snippet ogx

@@ -659,16 +659,36 @@ snippet pc
 	>
 		${2}
 	</p>
+snippet svgc
+	<svg
+		className='${1}'
+		viewBox=''
+	/>
 snippet imgc
 	<img
 		className='${1}'
 		src=''
 	/>
+snippet dc
+	<div
+		className='${1}'
+	>
+	</div>
 snippet divc
 	<div
 		className='${1}'
 	>
 	</div>
+snippet formc
+	<form
+		className='${1}'
+	>
+	</form>
+snippet labelc
+	<label
+		className='${1}'
+	>
+	</label>
 snippet smallc
 	<small
 		className='${1}'
@@ -699,6 +719,11 @@ snippet ac
 	>
 		${2}
 	</a>
+snippet fragf
+	{false &&
+		<React.Fragment>
+		</React.Fragment>
+	}
 snippet frag
 	<React.Fragment>${0}
 	</React.Fragment>
@@ -910,16 +935,16 @@ snippet tidk
 snippet tidl
 	{[
 		{
-			dt: '${0}',
-			dd: '${0}',
+			dt: '',
+			dd: '',
 		},
 	].map((x, i) => (
 		<div
-			className=''
+			className='${0}__item'
 			key={i}
 		>
-			<dt className=''>{get(x, 'dt')}</dt>
-			<dd className=''>{get(x, 'dd')}</dd>
+			<dt className='__dt'>{get(x, 'dt')}</dt>
+			<dd className='__dd'>{get(x, 'dd')}</dd>
 		</div>
 	))}
 snippet tig
