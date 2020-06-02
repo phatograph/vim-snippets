@@ -940,11 +940,11 @@ snippet tidl
 		},
 	].map((x, i) => (
 		<div
-			className='${0}__item'
+			className='${1:prop}__item'
 			key={i}
 		>
-			<dt className='__dt'>{get(x, 'dt')}</dt>
-			<dd className='__dd'>{get(x, 'dd')}</dd>
+			<dt className='${0:$1}__item__dt'>{get(x, 'dt')}</dt>
+			<dd className='${0:$1}__item__dd'>{get(x, 'dd')}</dd>
 		</div>
 	))}
 snippet tig
