@@ -3,8 +3,16 @@ extends html
 snippet rLink
 	<routes.Link
 		route=''
+		params={{}}
 	>
 	</routes.Link>
+snippet Linkr
+	<Link
+		route=''
+		params={{}}
+	>
+		${0}
+	</Link>
 snippet Link
 	<Link href=''>${0}</Link>
 snippet Linkt
@@ -669,7 +677,7 @@ snippet imgc
 		className='${1}'
 		src=''
 	/>
-snippet dc
+snippet d
 	<div
 		className='${1}'
 	>
