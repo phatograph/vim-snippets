@@ -661,6 +661,12 @@ snippet ano
 		return (
 		)
 	})()}
+snippet timec
+	<time
+		className='${1}'
+	>
+		${2}
+	</time>
 snippet pc
 	<p
 		className='${1}'
@@ -727,12 +733,12 @@ snippet ac
 	>
 		${2}
 	</a>
-snippet fragf
+snippet ff
 	{false &&
 		<React.Fragment>
 		</React.Fragment>
 	}
-snippet frag
+snippet f
 	<React.Fragment>${0}
 	</React.Fragment>
 snippet dangerous
@@ -909,19 +915,19 @@ snippet reactclass
 	import className from 'classnames'
 	// import {Link} from 'react-router-dom'
 
-	const Class = ({
+	const ${1:Class} = ({
 	}) => {
 		return (
-			<div className='Class'>
-				Class
+			<div className='${0:$1}'>
+				${0:$1}
 			</div>
 		)
 	}
 
-	Class.propTypes = {
+	${0:$1}.propTypes = {
 	}
 
-	export default Class
+	export default ${0:$1}
 snippet ki
 	key={i}
 snippet kj
