@@ -540,6 +540,10 @@ snippet revent
 				return state
 		}
 	}
+snippet catch
+	.catch((e) => {
+		errorsSet(get(e, 'response.data.errors'))
+	})
 snippet then
 	.then(() => {
 		${0}
