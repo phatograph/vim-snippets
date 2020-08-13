@@ -631,7 +631,9 @@ snippet onEvent
 		return _handler
 	}
 snippet cn
-	className={className('${0}', {})}
+	className={className('${1:class}', {
+		'$1--active': true,
+	})}
 snippet ts
 	this.state.
 snippet tss
