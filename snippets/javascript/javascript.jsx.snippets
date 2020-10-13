@@ -14,7 +14,8 @@ snippet Linkr
 		${0}
 	</Link>
 snippet Link
-	<Link href=''>${0}</Link>
+	<Link href={get(x, 'href', '/')}>${0}
+	</Link>
 snippet Linkt
 	<Link to=''>${0}</Link>
 snippet NavLink
