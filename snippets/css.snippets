@@ -228,6 +228,10 @@ snippet not
 	&:nth-of-type(${1}) {
 		${2}
 	}
+snippet noe
+	&:not(:empty) {
+		${0}
+	}
 snippet nlc
 	&:not(:last-child) {
 		${0}
@@ -958,7 +962,7 @@ snippet jcs
 snippet jce
 	justify-content: end;
 snippet jcfs
-	justify-content: flex-end;
+	justify-content: flex-start;
 snippet jcfe
 	justify-content: flex-end;
 snippet jcst
@@ -1167,6 +1171,8 @@ snippet ovs
 	overflow-scrolling: touch;
 	overflow-y: auto;
 	overflow-x: hidden;
+snippet toe
+	text-overflow: ellipsis;
 snippet ovv
 	overflow: visible;
 snippet pe
