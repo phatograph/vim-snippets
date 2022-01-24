@@ -1,3 +1,39 @@
+extends html
+
+snippet times
+	Array.from(Array(7)).map((_, i) => (
+		${0}
+	))}
+snippet sto
+	setTimeout(=>
+		${0}
+	, 100)
+snippet ref
+	ref={el => this.$el = el}
+snippet pvd
+	e.preventDefault()
+snippet c
+	className='${0}'
+snippet tp
+	this.props.
+snippet ts
+	this.state.
+snippet tss
+	this.setState({
+		${0}
+	})
+snippet tssc
+	this.setState({
+		${0}
+	}, () => {})
+snippet tssp
+	this.setState((prevState, props) => ({
+		${0}
+	}))
+snippet tsspc
+	this.setState((prevState, props) => ({
+		${0}
+	}), () => {})
 # Closure loop
 snippet forindo
 	for ${1:name} in ${2:array}
@@ -94,6 +130,10 @@ snippet req
 snippet exp
 	${0:root} = exports ? this
 
+snippet cl
+	console.log ${0}
+snippet ce
+	console.error ${0}
 snippet jsonp
 	JSON.parse ${0:jstr}
 # JSON.stringify

@@ -1,5 +1,13 @@
 # Some useful Unicode entities
 # Non-Breaking Space
+snippet picsum
+	https://picsum.photos/id/237/200/300
+snippet ablank
+	target='_blank' rel='nofollow noopener noreferrer'
+snippet de
+	</div>
+snippet sty
+	style="${1}"
 snippet nbs
 	&nbsp;
 # ←
@@ -50,6 +58,27 @@ snippet esc
 # comment
 snippet //
 	<!-- ${1} -->${0}
+# Generic Doctype
+snippet doctype HTML 4.01 Strict
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+snippet doctype HTML 4.01 Transitional
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+snippet doctype HTML 5
+	<!DOCTYPE HTML>
+snippet doctype XHTML 1.0 Frameset
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+snippet doctype XHTML 1.0 Strict
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+snippet doctype XHTML 1.0 Transitional
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+snippet doctype XHTML 1.1
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 # HTML Doctype 4.01 Strict
 snippet docts
 	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
@@ -92,8 +121,6 @@ snippet charset
 	charset="${1:utf-8}"
 snippet data
 	data-${1}="${2:$1}"
-snippet for
-	for="${1}"
 snippet height
 	height="${1}"
 snippet href
@@ -120,17 +147,17 @@ snippet width
 	width="${1}"
 # Elements
 snippet a
-	<a href="${1:#}">${0:$1}</a>
+	<a>${1}</a>
 snippet a.
-	<a class="${1}" href="${2:#}">${0:$1}</a>
+	<a class="${1}">${2}</a>
 snippet a#
-	<a id="${1}" href="${2:#}">${0:$1}</a>
+	<a id="${1}" href>${1}</a>
 snippet a:ext
-	<a href="http://${1:example.com}">${0:$1}</a>
+	<a href="http://${1:example.com}">${1}</a>
 snippet a:mail
 	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${0:email me}</a>
-snippet ac
-	<a href="`@+`">${0:`@+`}</a>
+# snippet ac
+# 	<a href="`@+`">${0:`@+`}</a>
 snippet abbr
 	<abbr title="${1}">${0}</abbr>
 snippet address
@@ -138,18 +165,18 @@ snippet address
 		${0}
 	</address>
 snippet area
-	<area shape="${1:rect}" coords="${2}" href="${3}" alt="${0}">
+	<area shape="${1:rect}" coords="${2}" href="${3}" alt="${0}" />
 snippet area+
-	<area shape="${1:rect}" coords="${2}" href="${3}" alt="${4}">
+	<area shape="${1:rect}" coords="${2}" href="${3}" alt="${4}" />
 	area+
 snippet area:c
-	<area shape="circle" coords="${1}" href="${2}" alt="${0}">
+	<area shape="circle" coords="${1}" href="${2}" alt="${0}" />
 snippet area:d
-	<area shape="default" coords="${1}" href="${2}" alt="${0}">
+	<area shape="default" coords="${1}" href="${2}" alt="${0}" />
 snippet area:p
-	<area shape="poly" coords="${1}" href="${2}" alt="${0}">
+	<area shape="poly" coords="${1}" href="${2}" alt="${0}" />
 snippet area:r
-	<area shape="rect" coords="${1}" href="${2}" alt="${0}">
+	<area shape="rect" coords="${1}" href="${2}" alt="${0}" />
 snippet article
 	<article>
 		${0}
@@ -175,11 +202,11 @@ snippet aside#
 		${0}
 	</aside>
 snippet audio
-	<audio src="${1}">${0}</audio>
+	<audio src="${1}>${0}</audio>
 snippet b
-	<b>${0}</b>
+	Button
 snippet base
-	<base href="${1}" target="${0}">
+	<base href="${1}" target="${0}" />
 snippet bdi
 	<bdi>${0}</bdo>
 snippet bdo
@@ -197,11 +224,11 @@ snippet body
 		${0}
 	</body>
 snippet br
-	<br>
+	<br />
 snippet button
 	<button type="${1:submit}">${0}</button>
 snippet button.
-	<button class="${1:button}" type="${2:submit}">${0}</button>
+	<button class="${1:Button}">${0}</button>
 snippet button#
 	<button id="${1}" type="${2:submit}">${0}</button>
 snippet button:s
@@ -219,14 +246,17 @@ snippet cite
 snippet code
 	<code>${0}</code>
 snippet col
-	<col>
+	<col />
+snippet col+
+	<col />
+	col+
 snippet colgroup
 	<colgroup>
 		${0}
 	</colgroup>
 snippet colgroup+
 	<colgroup>
-		<col>
+		<col />
 		col+${0}
 	</colgroup>
 snippet command
@@ -248,7 +278,9 @@ snippet datatemplate
 		${0}
 	</datatemplate>
 snippet dd
-	<dd>${0}</dd>
+	<dd>
+		${0}
+	</dd>
 snippet dd.
 	<dd class="${1}">${0}</dd>
 snippet dd#
@@ -271,6 +303,10 @@ snippet div.
 	<div class="${1}">
 		${0}
 	</div>
+snippet divi
+	<div>${0}</div>
+snippet divi.
+	<div class="${1}">${0}</div>
 snippet div#
 	<div id="${1}">
 		${0}
@@ -306,7 +342,7 @@ snippet dt+
 snippet em
 	<em>${0}</em>
 snippet embed
-	<embed src="${1}" type="${0}">
+	<embed src="${1}" type="${0}" />
 snippet fieldset
 	<fieldset>
 		${0}
@@ -351,6 +387,10 @@ snippet footer#
 	</footer>
 snippet form
 	<form action="${1}" method="${2:post}">
+		${0}
+	</form>
+snippet formx
+	<form>
 		${0}
 	</form>
 snippet form.
@@ -399,7 +439,7 @@ snippet h6#
 	<h6 id="${1}">${0}</h6>
 snippet head
 	<head>
-		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 		<title>${1:`substitute(vim_snippets#Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
 		${0}
@@ -425,7 +465,7 @@ snippet hgroup.
 		${0}
 	</hgroup>
 snippet hr
-	<hr>
+	<hr />
 snippet html
 	<html>
 	${0}
@@ -438,8 +478,8 @@ snippet html5
 	<!DOCTYPE html>
 	<html>
 		<head>
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width">
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width" />
 			<title>${1:`substitute(vim_snippets#Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
 			${2:link}
 		</head>
@@ -449,10 +489,10 @@ snippet html5
 	</html>
 snippet html5l
 	<!DOCTYPE html>
-	<html lang="${1:en}">
+	<html lang="${1:es}">
 		<head>
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width">
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width" />
 			<title>${2:`substitute(vim_snippets#Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
 			${3:link}
 		</head>
@@ -461,7 +501,11 @@ snippet html5l
 		</body>
 	</html>
 snippet i
-	<i>${0}</i>
+	<i class="${1}">${0}</i>
+snippet i.
+	<i class="${1}">${2}</i>
+snippet fa
+	<i class="fa fa-${1}"></i>
 snippet iframe
 	<iframe src="${1}" frameborder="0"></iframe>
 snippet iframe.
@@ -469,65 +513,67 @@ snippet iframe.
 snippet iframe#
 	<iframe id="${1}" src="${2}" frameborder="0"></iframe>
 snippet img
-	<img src="${1}" alt="${2}">
+	<img src="${1}" />
 snippet img.
-	<img class="${1}" src="${2}" alt="${3}">
+	<img class="${1}" src="${2}" />
 snippet img#
-	<img id="${1}" src="${2}" alt="${3}">
+	<img id="${1}" src="${2}" />
 snippet input
-	<input type="${1:text/submit/hidden/button/image}" name="${2}" id="${3:$2}" value="${4}">
+	<input type="${1:text/submit/hidden/button/image}" />
 snippet input.
-	<input class="${1}" type="${2:text/submit/hidden/button/image}" name="${3}" id="${4:$3}" value="${5}">
+	<input class="${1:Input}" />
 snippet input:text
-	<input type="text" name="${1}" id="${2:$1}" value="${3}">
+	<input type="text" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:submit
-	<input type="submit" name="${1}" id="${2:$1}" value="${3}">
+	<input type="submit" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:hidden
-	<input type="hidden" name="${1}" id="${2:$1}" value="${3}">
+	<input type="hidden" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:button
-	<input type="button" name="${1}" id="${2:$1}" value="${3}">
+	<input type="button" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:image
-	<input type="image" name="${1}" id="${2:$1}" src="${3}" alt="${4}">
+	<input type="image" name="${1}" id="${2:$1}" src="${3}" alt="${4}" />
 snippet input:checkbox
-	<input type="checkbox" name="${1}" id="${2:$1}">
+	<input type="checkbox" name="${1}" id="${2:$1}" />
 snippet input:radio
-	<input type="radio" name="${1}" id="${2:$1}">
+	<input type="radio" name="${1}" id="${2:$1}" />
 snippet input:color
-	<input type="color" name="${1}" id="${2:$1}" value="${3}">
+	<input type="color" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:date
-	<input type="date" name="${1}" id="${2:$1}" value="${3}">
+	<input type="date" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:datetime
-	<input type="datetime" name="${1}" id="${2:$1}" value="${3}">
+	<input type="datetime" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:datetime-local
-	<input type="datetime-local" name="${1}" id="${2:$1}" value="${3}">
+	<input type="datetime-local" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:email
-	<input type="email" name="${1}" id="${2:$1}" value="${3}">
+	<input type="email" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:file
-	<input type="file" name="${1}" id="${2:$1}" value="${3}">
+	<input type="file" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:month
-	<input type="month" name="${1}" id="${2:$1}" value="${3}">
+	<input type="month" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:number
-	<input type="number" name="${1}" id="${2:$1}" value="${3}">
+	<input type="number" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:password
-	<input type="password" name="${1}" id="${2:$1}" value="${3}">
+	<input type="password" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:range
-	<input type="range" name="${1}" id="${2:$1}" value="${3}">
+	<input type="range" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:reset
-	<input type="reset" name="${1}" id="${2:$1}" value="${3}">
+	<input type="reset" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:search
-	<input type="search" name="${1}" id="${2:$1}" value="${3}">
+	<input type="search" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:time
-	<input type="time" name="${1}" id="${2:$1}" value="${3}">
+	<input type="time" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:url
-	<input type="url" name="${1}" id="${2:$1}" value="${3}">
+	<input type="url" name="${1}" id="${2:$1}" value="${3}" />
 snippet input:week
-	<input type="week" name="${1}" id="${2:$1}" value="${3}">
+	<input type="week" name="${1}" id="${2:$1}" value="${3}" />
 snippet ins
 	<ins>${0}</ins>
 snippet kbd
 	<kbd>${0}</kbd>
 snippet label
-	<label for="${0:$1}">${1}</label>
+	<label>${0}</label>
+snippet label.
+	<label class="${1}">${2}</label>
 snippet label:i
 	<label for="${2:$1}">${1}</label>
 	<input type="${3:text/submit/hidden/button}" name="${4:$2}" id="${5:$2}" value="${6}" />
@@ -553,19 +599,19 @@ snippet lia+
 	<li><a href="${2:#}">${1}</a></li>
 	lia+
 snippet link
-	<link rel="${1}" href="${2}" title="${3}" type="${4}">
+	<link rel="${1}" href="${2}" title="${3}" type="${4}" />
 snippet link:atom
-	<link rel="alternate" href="${1:atom.xml}" title="Atom" type="application/atom+xml">
+	<link rel="alternate" href="${1:atom.xml}" title="Atom" type="application/atom+xml" />
 snippet link:s
-	<link rel="stylesheet" href="${1:style.css}">
+	<link rel="stylesheet" href="${1:style.css}" />
 snippet link:css
-	<link rel="stylesheet" href="${1:style.css}" type="text/css" media="${2:all}">
+	<link rel="stylesheet" href="${1:style.css}" type="text/css" media="${2:all}" />
 snippet link:favicon
-	<link rel="shortcut icon" href="${1:favicon.ico}" type="image/x-icon">
+	<link rel="shortcut icon" href="${1:favicon.ico}" type="image/x-icon" />
 snippet link:rss
-	<link rel="alternate" href="${1:rss.xml}" title="RSS" type="application/atom+xml">
+	<link rel="alternate" href="${1:rss.xml}" title="RSS" type="application/atom+xml" />
 snippet link:touch
-	<link rel="apple-touch-icon" href="${1:favicon.png}">
+	<link rel="apple-touch-icon" href="${1:favicon.png}" />
 snippet main
 	<main role="main">
 		${0}
@@ -601,19 +647,17 @@ snippet menu:t
 		${0}
 	</menu>
 snippet meta
-	<meta http-equiv="${1}" content="${2}">
+	<meta http-equiv="${1}" content="${2}" />
 snippet meta:s
-	<meta ${0}>
+	<meta ${0} />
 snippet meta:d
-	<meta name="description" content="${0}">
+	<meta name="description" content="${0}" />
 snippet meta:compat
-	<meta http-equiv="X-UA-Compatible" content="IE=${1:7,8,edge}">
+	<meta http-equiv="X-UA-Compatible" content="IE=${1:7,8,edge}" />
 snippet meta:refresh
-	<meta http-equiv="refresh" content="3;url=${0}">
-snippet meta:utf5
-	<meta charset="utf-8">
+	<meta http-equiv="refresh" content="text/html;charset=UTF-8" />
 snippet meta:utf
-	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 snippet meter
 	<meter>${0}</meter>
 snippet nav
@@ -640,14 +684,14 @@ snippet object
 snippet movie
 	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
 	codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-		<param name="src" value="$1">
-		<param name="controller" value="$4">
-		<param name="autoplay" value="$5">
+		<param name="src" value="$1" />
+		<param name="controller" value="$4" />
+		<param name="autoplay" value="$5" />
 		<embed src="${1:movie.mov}"
 			width="${2:320}" height="${3:240}"
 			controller="${4:true}" autoplay="${5:true}"
 			scale="tofit" cache="true"
-			pluginspage="http://www.apple.com/quicktime/download/">
+			pluginspage="http://www.apple.com/quicktime/download/" />
 	</object>
 snippet ol
 	<ol>
@@ -687,7 +731,7 @@ snippet p.
 snippet p#
 	<p id="${1}">${0}</p>
 snippet param
-	<param name="${1}" value="${2}">
+	<param name="${1}" value="${2}" />
 snippet pre
 	<pre>
 		${0}
@@ -704,14 +748,14 @@ snippet ruby
 	<ruby>
 		<rp><rt>${0}</rt></rp>
 	</ruby>
-snippet s
-	<s>${0}</s>
+# snippet s
+# 	<s>${0}</s>
 snippet samp
 	<samp>
 		${0}
 	</samp>
 snippet script
-	<script>
+	<script charset="utf-8">
 		${0}
 	</script>
 snippet scripts
@@ -750,7 +794,7 @@ snippet select+
 snippet small
 	<small>${0}</small>
 snippet source
-	<source src="${1}" type="${2}" media="${0}">
+	<source src="${1}" type="${2}" media="${0}" />
 snippet span
 	<span>${0}</span>
 snippet span.
@@ -798,6 +842,8 @@ snippet td+
 	td+${0}
 snippet textarea
 	<textarea name="${1}" id="${2:$1}" rows="${3:8}" cols="${4:40}">${5}</textarea>
+snippet textareax
+	<textarea>${0}</textarea>
 snippet tfoot
 	<tfoot>
 		${0}
@@ -815,6 +861,8 @@ snippet thead
 	<thead>
 		${0}
 	</thead>
+snippet timex
+	<time>${1}</time>
 snippet time
 	<time datetime="${1}" pubdate="${2:$1}">${0:$1}</time>
 snippet title
@@ -829,7 +877,7 @@ snippet tr+
 		td+${0}
 	</tr>
 snippet track
-	<track src="${1}" srclang="${2}" label="${3}" default="${4:default}>${5}
+	<track src="${1}" srclang="${2}" label="${3}" default="${4:default} />${5}
 snippet ul
 	<ul>
 		${0}
@@ -850,10 +898,8 @@ snippet ul+
 snippet var
 	<var>${0}</var>
 snippet video
-	<video src="${1}" height="${2}" width="${3}" preload="${4:none}" autoplay="${5:autoplay}">${6}</video>
-snippet video.
-	<video class="${1}" src="${2}" height="${3}" width="${4}" preload="${5:none}" autoplay="${6:autoplay}">${7}</video>
+	<video src="${1} height="${2}" width="${3}" preload="${5:none}" autoplay="${6:autoplay}>${7}</video>
 snippet wbr
-	<wbr>
+	<wbr />
 snippet viewport
 	<meta name="viewport" content="width=device-width, initial-scale=1">

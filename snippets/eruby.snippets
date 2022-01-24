@@ -4,6 +4,26 @@
 extends html
 
 # Rails *****************************
+snippet cn
+	<%= classname("${1}", {}) %>
+snippet iff
+	<% if ${1:false} %>
+		${0}
+	<% end %>
+snippet rco
+	<%= react_component("${0}", {
+	}) %>
+snippet rco:p
+	<%= react_component("${0}", {
+	}, {prerender: true}) %>
+snippet tt
+	<%= t("${0}") %>
+snippet tts
+	<%= t("${0}").html_safe %>
+snippet cl
+	:class => '${1}'
+snippet sym
+	:${1} => '${2}'
 snippet rc
 	<% ${0} %>
 snippet rce
@@ -46,9 +66,8 @@ snippet conf
 	<% content_for :${1:head} do %>
 		${0}
 	<% end %>
-
-snippet cs 
-	<%= collection_select(:${1:object}, :${2:method}, ${3:collection}, :${4:value_method}, :${5:text_method}, options = {${0:prompt: true}}) %>        
+snippet cs
+	<%= collection_select <+object+>, <+method+>, <+collection+>, <+value_method+>, <+text_method+><+, <+[options]+>, <+[html_options]+>+> %>
 snippet ct
 	<%= content_tag '${1:DIV}', ${2:content}${0:,options} %>
 snippet ff
@@ -81,8 +100,6 @@ snippet ffta
 	<%= ${1:f}.text_area :${0:attribute} %>
 snippet fftf
 	<%= ${1:f}.text_field :${0:attribute} %>
-snippet fcs
-	<%= ${1:f}.collection_select(:${2:method}, ${3:collection}, :${4:value_method}, :${5:text_method}, options = {${0:prompt: true}}) %>
 snippet fields
 	<%= fields_for :${1:model}, @$1 do |${2:f}| %>
 		${0}
@@ -107,6 +124,11 @@ snippet lipp
 	<%= link_to "${1:Link text...}", ${0:model}s_path %>
 snippet lt
 	<%= link_to "${1:name}", ${0:dest} %>
+snippet ltc
+	<%= link_to "${2:name}", ${1:dest}, class: "${0}" %>
+snippet ltd
+	<%= link_to ${1:dest} do %>
+	<% end %>
 snippet ntc
 	<%= number_to_currency(${1}) %>
 snippet ofcfs
@@ -122,8 +144,8 @@ snippet slt
 snippet sslt
 	<%= stylesheet_link_tag "${0}" %>
 snippet if
-	<% if ${1} %>
-		${0:${VISUAL}}
+	<% if ${1:false} %>
+		${0}
 	<% end %>
 snippet ife
 	<% if ${1} %>
@@ -131,5 +153,7 @@ snippet ife
 	<% else %>
 		${0}
 	<% end %>
+snippet else
+	<% else %>
 snippet pry
 	<% require 'pry'; binding.pry %>

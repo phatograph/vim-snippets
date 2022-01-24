@@ -1,0 +1,35 @@
+snippet book
+	@BOOK{${1},
+		title  = {${2}},
+		author = {${3}},
+		url    = {${4}},
+		year   = {${5}},
+	}
+
+snippet bookf
+	@BOOK{${1},
+		title  = {${2}},
+		author = {${3}},
+		url    = {${4}},
+		month  = {${5}},
+		year   = {${6}},
+		note   = {${7}}
+	}
+
+snippet web
+	@BOOK{${0:title},
+		title  = {},
+		author = {},
+		url    = {},
+		month  = {},
+		year   = {},
+		note   = {accessed \textsuperscript{th}, 2015}
+	}
+
+snippet web2
+	@BOOK{${1},
+		title  = {${2}},
+		author = {${3}},
+		url    = {${4}},
+		note   = {accessed ${5:June 14}\textsuperscript{${6:th}} 2016}
+	}

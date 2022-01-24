@@ -1,0 +1,989 @@
+extends html
+
+snippet rLink
+	<routes.Link
+		route=''
+		params={{}}
+	>
+	</routes.Link>
+snippet Linkr
+	<Link
+		route=''
+		params={{}}
+	>
+		${0}
+	</Link>
+snippet Link
+	<Link href={x?.href}>${0}
+	</Link>
+snippet Linkt
+	<Link to=''>${0}</Link>
+snippet NavLink
+	<NavLink to=''>${0}</NavLink>
+snippet cwob
+	wordBreak: '${0}',
+snippet cwob:ba
+	wordBreak: 'break-all',
+snippet cwob:bs
+	wordBreak: 'break-strict',
+snippet cwob:k
+	wordBreak: 'keep-all',
+snippet cwob:l
+	wordBreak: 'loose',
+snippet cwob:n
+	wordBreak: 'normal',
+
+snippet cca
+	calc(${0})
+snippet cls
+	letterSpacing: '${0}',
+snippet cmah
+	maxHeight: '${0}',
+snippet cmah:n
+	maxHeight: 'none',
+snippet cmaw
+	maxWidth: '${0}',
+snippet cmaw:n
+	maxWidth: 'none',
+snippet cmih
+	minHeight: '${0}',
+snippet cmiw
+	minWidth: '${0}',
+snippet usetheme
+	import { useTheme } from 'emotion-theming'
+	const { color } = useTheme()
+snippet apromise
+	await Promise.all([
+	])
+snippet anitween
+	await animation.start({
+		transition: {
+			delay: 0.5,
+			duration: 0.5,
+			ease: 'easeInOut',
+		},
+	})
+snippet anispring
+	await animation.start({
+		transition: {
+			delay: 0.5,
+			type: 'spring',
+			damping: 100,
+			stiffness: 500,
+			velocity: 10,
+		},
+	})
+snippet caniset
+	animationFillMode: 'forwards',
+	animationName: '${0}',
+	animationDuration: '400ms',
+snippet cgs
+	var(--global-space)
+snippet cv
+	var(--${0})
+snippet c!
+	!important
+snippet c.
+	'${0:> *}': {
+	},
+snippet cstyle
+	style={{
+		${0}
+	}}
+snippet ccss
+	css={{
+		${0}
+	}}
+snippet cc-
+	var(--color-${0})
+
+snippet csxs
+	[media.xs]: {
+		${0}
+	},
+snippet cssm
+	[media.sm]: {
+		${0}
+	},
+snippet csmd
+	[media.md]: {
+		${0}
+	},
+snippet cslg
+	[media.lg]: {
+		${0}
+	},
+snippet csxl
+	[media.xl]: {
+		${0}
+	},
+
+snippet csmo
+	[media.mobiles]: {
+		${0}
+	},
+snippet csmol
+	[media.mobilesL]: {
+		${0}
+	},
+snippet csta
+	[media.tablets]: {
+		${0}
+	},
+snippet cstal
+	[media.tabletsL]: {
+		${0}
+	},
+snippet cstaxl
+	[media.tabletsL]: {
+		${0}
+	},
+
+snippet cta:c
+	textAlign: 'center',
+snippet cta:l
+	textAlign: 'left',
+snippet cta:r
+	textAlign: 'right',
+snippet cp
+	padding: '${0}',
+snippet cpt
+	paddingTop: '${0}',
+snippet cpr
+	paddingRight: '${0}',
+snippet cpb
+	paddingBottom: '${0}',
+snippet cpl
+	paddingLeft: '${0}',
+snippet cm
+	margin: '${0}',
+snippet cmt
+	marginTop: '${0}',
+snippet cmr
+	marginRight: '${0}',
+snippet cmb
+	marginBottom: '${0}',
+snippet cml
+	marginLeft: '${0}',
+snippet ccur
+	cursor: '${0}',
+snippet ccur:a
+	cursor: 'auto',
+snippet ccur:c
+	cursor: 'crosshair',
+snippet ccur:d
+	cursor: 'default',
+snippet ccur:ha
+	cursor: 'hand',
+snippet ccur:he
+	cursor: 'help',
+snippet ccur:m
+	cursor: 'move',
+snippet ccur:p
+	cursor: 'pointer',
+snippet ccur:t
+	cursor: 'text',
+snippet cw
+	width: '${0}',
+snippet ch
+	height: '${0}',
+snippet cd
+	display: '${0}',
+snippet cd:n
+	display: 'none',
+snippet cd:ib
+	display: 'inline-block',
+snippet cd:b
+	display: 'block',
+snippet cd:f
+	display: 'flex',
+snippet cd:g
+	display: 'grid',
+	gridTemplateColumns: '${0}',
+	gridGap: 'calc(var(--global-space) * 1)',
+snippet cgtc
+	gridTemplateColumns: '${0}',
+snippet cgtr
+	gridTemplateRows: '${0}',
+snippet crep
+	repeat(${1:1}, ${2:1fr})
+snippet cmc
+	max-content
+snippet cgg
+	gridGap: '${0:calc(var(--global-space) * 1)}',
+snippet cga
+	gridArea: '1 / 1 / 2 / 2',
+snippet cgc
+	gridColumn: '${1:1 / 3}',
+snippet cgr
+	gridRow: '${1:1 / 3}',
+snippet cf
+	flex: '0 0 ${1:auto}',
+	width: '$1',
+snippet cf:1
+	flex: '1',
+snippet cfd
+	flexDirection: 'column',
+snippet cgx
+	calc(var(--global-space) * ${0})
+snippet cg2
+	calc(var(--global-space) * 2)
+snippet cg
+	calc(var(--global-space) * 1)
+snippet cg5
+	calc(var(--global-space) * .5)
+snippet cg25
+	calc(var(--global-space) * .25)
+snippet cg15
+	calc(var(--global-space) * .15)
+snippet cbgc
+	backgroundColor: '${0}',
+snippet cbgi
+	backgroundImage: 'url(${0})',
+snippet cbgset
+	backgroundImage: 'url(${0})',
+	backgroundPosition: 'center center',
+	backgroundSize: 'cover',
+	backgroundRepeat: 'no-repeat',
+snippet cwhs:nw
+	whiteSpace: 'nowrap',
+snippet cov:v
+	overflow: 'visible',
+snippet cov:h
+	overflow: 'hidden',
+snippet cov:s
+	WebkitOverflowScrolling: 'touch',
+	overflowScrolling: 'touch',
+	overflow: 'scroll',
+snippet cto:e
+	textOverflow: 'ellipsis',
+snippet cts
+	transition: '${1:opacity 0.4s}${2:, transform 0.4s}',
+snippet cts:o
+	transition: '${1:opacity 0.4s}',
+snippet cts:t
+	transition: '${1:transform 0.4s}',
+snippet ctf
+	transform: '${0}',
+snippet ctly
+	translateY(${0})
+snippet ctlx
+	translateX(${0})
+snippet clh
+	lineHeight: '${0}',
+snippet cpe
+	pointerEvents: 'none',
+snippet cpe:a
+	pointerEvents: 'auto',
+snippet cc
+	color: '${0}',
+snippet ctd:u
+	textDecoration: 'underline',
+snippet ctt:u
+	textTransform: 'uppercase',
+snippet cff
+	fontFamily: '${0}',
+snippet cfz
+	fontSize: '${0}',
+snippet cfw
+	fontWeight: '${0}',
+snippet cfw:b
+	fontWeight: 'bold',
+snippet cbdrz
+	borderRadius: '${0}',
+snippet cbd
+	border: '${0}',
+snippet cbdc
+	borderColor: '${0}',
+snippet cbdt
+	borderTop: '${0}',
+snippet cbdr
+	borderRight: '${0}',
+snippet cbdb
+	borderBottom: '${0}',
+snippet cbdl
+	borderLeft: '${0}',
+snippet cpos:r
+	position: 'relative',
+snippet cpos:f
+	position: 'fixed',
+snippet cpos:a
+	position: 'absolute',
+snippet cnlc
+	'&:not(:last-child)': {
+		${0}
+	},
+snippet cz
+	zIndex: '${0}',
+snippet ct
+	top: '${0}',
+snippet cr
+	right: '${0}',
+snippet cb
+	bottom: '${0}',
+snippet cll
+	left: '${0}',
+
+snippet cac
+	alignContent: '${0}',
+snippet cac:c
+	alignContent: 'center',
+snippet cac:s
+	alignContent: 'start',
+snippet cac:e
+	alignContent: 'end',
+snippet cac:fs
+	alignContent: 'flex-start',
+snippet cac:fe
+	alignContent: 'flex-end',
+snippet cac:sb
+	alignContent: 'space-between',
+snippet cac:sa
+	alignContent: 'space-around',
+snippet cac:se
+	alignContent: 'space-evenly',
+snippet cac:st
+	alignContent: 'stretch',
+
+snippet cai
+	alignItems: '${0}',
+snippet cai:c
+	alignItems: 'center',
+snippet cai:s
+	alignItems: 'start',
+snippet cai:e
+	alignItems: 'end',
+snippet cai:fs
+	alignItems: 'flex-start',
+snippet cai:fe
+	alignItems: 'flex-end',
+
+snippet cas
+	alignSelf: '${0}',
+snippet cas:c
+	alignSelf: 'center',
+snippet cas:s
+	alignSelf: 'start',
+snippet cas:e
+	alignSelf: 'end',
+snippet cas:fs
+	alignSelf: 'flex-start',
+snippet cas:fe
+	alignSelf: 'flex-end',
+
+snippet cjc
+	justifyContent: '${0}',
+snippet cjc:c
+	justifyContent: 'center',
+snippet cjc:s
+	justifyContent: 'start',
+snippet cjc:e
+	justifyContent: 'end',
+snippet cjc:fs
+	justifyContent: 'flex-start',
+snippet cjc:fe
+	justifyContent: 'flex-end',
+snippet cjc:st
+	justifyContent: 'stretch',
+snippet cjc:sb
+	justifyContent: 'space-between',
+snippet cjc:se
+	justifyContent: 'space-evenly',
+snippet cjc:sa
+	justifyContent: 'space-around',
+
+snippet cji
+	justifyItems: '${0}',
+snippet cji:c
+	justifyItems: 'center',
+snippet cji:s
+	justifyItems: 'start',
+snippet cji:e
+	justifyItems: 'end',
+snippet cji:fs
+	justifyItems: 'flex-start',
+snippet cji:fe
+	justifyItems: 'flex-end',
+snippet cji:s
+	justifyItems: 'stretch',
+snippet cji:l
+	justifyItems: 'left',
+snippet cji:r
+	justifyItems: 'right',
+
+snippet cjs
+	justifySelf: '${0}',
+snippet cjs:c
+	justifySelf: 'center',
+snippet cjs:s
+	justifySelf: 'start',
+snippet cjs:e
+	justifySelf: 'end',
+snippet cjs:fs
+	justifySelf: 'flex-start',
+snippet cjs:fe
+	justifySelf: 'flex-end',
+snippet cjs:l
+	justifySelf: 'left',
+snippet cjs:r
+	justifySelf: 'right',
+
+snippet cbefore
+	'&::before': {
+		content: '""',
+		display: 'block',
+		width: '${1}px',
+		height: '${2}px',
+		backgroundImage: 'url(${3})',
+		backgroundPosition: 'center center',
+		backgroundSize: 'cover',
+		backgroundRepeat: 'no-repeat',
+	},
+snippet cafter
+	'&::after': {
+		content: '""',
+		display: 'block',
+		width: '${1}px',
+		height: '${2}px',
+		backgroundImage: 'url(${3})',
+		backgroundPosition: 'center center',
+		backgroundSize: 'cover',
+		backgroundRepeat: 'no-repeat',
+	},
+snippet c:h
+	'&:hover': {
+		${0}
+	},
+snippet cstyle
+	let _style = {
+	}
+
+	if () {
+		_style = {
+			..._style,
+		}
+	}
+snippet cop
+	opacity: '${0}',
+snippet onc
+	onClick={() => {
+		${0}
+	}}
+snippet onch
+	onChange={(e) => {
+		${0}
+	}}
+snippet ons
+	onSubmit={(e) => {
+		e.preventDefault()
+	}}
+snippet rud
+	const [state, dispatch] = React.useReducer((state, action) => {
+		switch (action.type) {
+			case 'load':
+				return {
+					...state,
+					isLoading: true,
+				}
+			default:
+				return state
+		}
+	}, {
+		isLoading: false,
+		data: null,
+	})
+snippet rur
+	const ___${1} = React.useRef(${2})
+snippet rus
+	const [__${1:isActive}, __${0:$1}Set] = React.useState(false)
+snippet rue
+	React.useEffect(() => {
+		${0}
+	}, [])
+snippet cdm
+	componentDidMount = () => {
+		${0}
+	}
+snippet cdu
+	componentDidUpdate = (prevProps, prevState) => {
+		${0}
+	}
+snippet f2
+	${1} = () => {
+		${2}
+	}
+snippet Linkparams
+	{
+		pathname: get(this.props, 'location.pathname'),
+		search: queryString.stringify({
+			returnPath: get(this.props, 'location.pathname'),
+		}),
+	}
+snippet importget
+	import {get} from 'lodash'
+snippet importimage
+	import qr from '../../assets/images/qr'
+snippet importhelper
+	import {
+		t,
+	} from '../lib/helpers'
+snippet importimageloader
+	import ImageLoader from './ImageLoader'
+snippet importaction
+	import {
+	} from '../actions'
+snippet revent
+	const loginWithEmail = (state = defaultState, action) => {
+		switch (action.type) {
+			case 'LOGIN_WITH_EMAIL':
+				return loadingState(state)
+			default:
+				return state
+		}
+	}
+snippet catch
+	.catch((e) => {
+		console.log(e?.response?.data?.errors)
+	})
+snippet then
+	.then(() => {
+		${0}
+	})
+snippet thens
+	.then((res) => {
+		if (get(res, 'type', '').endsWith('_SUCCESS')) {
+			${0}
+		}
+	})
+snippet selectx
+	<select className='Select'>
+		<option>${0}</option>
+	</select>
+snippet inputx
+	<input
+		type='text'
+		className='Input'
+	/>
+snippet buttonx
+	<button className='Button'>${0}</button>
+snippet ic
+	<i
+		className='${1}'
+	/>
+snippet dlc
+	<dl
+		className='${1}'
+	>
+		${2}
+	</dl>
+snippet dtc
+	<dt className='${1}'>${2}</dt>
+snippet ddc
+	<dd className='${1}'>${2}</dd>
+snippet h1c
+	<h1
+		className='${1}'
+	>
+		${2}
+	</h1>
+snippet h2c
+	<h2
+		className='${1}'
+	>
+		${2}
+	</h2>
+snippet h3c
+	<h3
+		className='${1}'
+	>
+		${2}
+	</h3>
+snippet h4c
+	<h4
+		className='${1}'
+	>
+		${2}
+	</h4>
+snippet h5c
+	<h5
+		className='${1}'
+	>
+		${2}
+	</h5>
+snippet h6c
+	<h6
+		className='${1}'
+	>
+		${2}
+	</h6>
+snippet onEvent
+	_handlers = {
+		onEvent: {},
+	}
+
+	onEvent = (args) => {
+		let _handler = this._handlers.onEvent[args]
+
+		if (!_handler) {
+			_handler = (e) => {
+			}
+		}
+
+		return _handler
+	}
+snippet cn
+	className={className('${1:class}', {
+		'$1--active': true,
+	})}
+snippet ts
+	this.state
+snippet tss
+	this.setState({
+		${0}
+	})
+snippet tssc
+	this.setState({
+		${0}
+	}, () => {
+	})
+snippet tssp
+	this.setState((prevState, props) => ({
+		isActive: !prevState.isActive,
+	}))
+snippet tsspc
+	this.setState((prevState, props) => ({
+		isActive: !prevState.isActive,
+	}), () => {
+	})
+snippet t
+	t('${1}')
+snippet tt
+	tt(t, 'current.${1}')
+snippet t2
+	t(currentLocale, '${1}')
+snippet ref
+	ref={el => this.$el = el}
+snippet c
+	className='${0}'
+snippet tp
+	this.props
+snippet ano
+	{(() => {
+		return (
+		)
+	})()}
+snippet timec
+	<time
+		className='${1}'
+	>
+		${2}
+	</time>
+snippet pc
+	<p
+		className='${1}'
+	>
+		${2}
+	</p>
+snippet svgc
+	<svg
+		className='${1}'
+		viewBox=''
+	/>
+snippet svgcs
+	<svg
+		className='${1}'
+		viewBox=''
+		style={{
+			backgroundImage: `url()`,
+		}}
+	/>
+snippet imgc
+	<img
+		className='${1}'
+		src=''
+	/>
+snippet d
+	<div
+		className='${1}'
+	>
+	</div>
+snippet divc
+	<div
+		className='${1}'
+	>
+	</div>
+snippet formc
+	<form
+		className='${1}'
+	>
+	</form>
+snippet labelc
+	<label
+		className='${1}'
+	>
+	</label>
+snippet smallc
+	<small
+		className='${1}'
+	>
+		${2}
+	</small>
+snippet strongc
+	<strong
+		className='${1}'
+	>
+		${2}
+	</strong>
+snippet spanc
+	<span
+		className='${1}'
+	>
+		${2}
+	</span>
+snippet ulc
+	<ul
+		className='${1}'
+	>
+		${2}
+	</ul>
+snippet lic
+	<li
+		className='${1}'
+	>
+		${2}
+	</li>
+snippet ab
+	<a
+		className='Button'
+	>
+		${0}
+	</a>
+snippet ac
+	<a
+		className='${1}'
+	>
+		${2}
+	</a>
+snippet ff
+	{false &&
+		<React.Fragment>
+		</React.Fragment>
+	}
+snippet fc
+	{false ?
+		<React.Fragment>
+		</React.Fragment>
+	:
+		<React.Fragment>
+		</React.Fragment>
+	}
+snippet f
+	<React.Fragment>${0}
+	</React.Fragment>
+snippet dangerous
+	dangerouslySetInnerHTML={{__html: ${0}}}
+snippet tbind
+	(() => { ${0} }).bind(this)
+snippet reduxclass:class
+	import * as React from 'react'
+	import {connect} from 'react-redux'
+	// import className from 'classnames'
+
+	class ${0}Class extends React.Component {
+		static defaultProps = {
+		}
+
+		state = {
+		}
+
+		render = () => {
+			return (
+				<div className='Class'>
+					Class
+				</div>
+			)
+		}
+	}
+
+	const mapStateToProps = (state) => ({
+	})
+
+	const mapDispatchToProps = (dispatch) => ({
+	})
+
+	export default connect(mapStateToProps, mapDispatchToProps)(Class)
+snippet reduxclass:con
+	import * as React from 'react'
+	import {connect} from 'react-redux'
+	// import className from 'classnames'
+
+	class ${0}Class extends React.Component {
+		constructor(props) {
+			super(props)
+
+			this.state = {
+			}
+		}
+
+		render() {
+			return (
+				<div className='Class'>
+					Class
+				</div>
+			)
+		}
+	}
+
+	const mapStateToProps = (state) => ({
+	})
+
+	const mapDispatchToProps = (dispatch) => ({
+	})
+
+	export default connect(mapStateToProps, mapDispatchToProps)(Class)
+snippet reduxclass
+	import * as React from 'react'
+	import {useDispatch, useMappedState} from 'redux-react-hook'
+	// import className from 'classnames'
+
+	import {
+		// loadUserCheckIns,
+	} from '../actions'
+
+	const Class = ({
+	}) => {
+		const dispatch = useDispatch()
+
+		// useEffect(() => {
+		//   dispatch(loadUserCheckIns())
+		// }, [])
+
+		// const userCheckIns = useMappedState(useCallback((state) => state.userCheckIns, []))
+
+		return (
+			<div className='Class'>
+				Class
+			</div>
+		)
+	}
+
+	Class.propTypes = {
+	}
+
+	export default Class
+snippet reactclass:class
+	import * as React from 'react'
+	// import className from 'classnames'
+	// import {useRouter} from 'next/router'
+	// import Link from 'next/link'
+
+	class ${0}Class extends React.Component {
+		static defaultProps = {
+		}
+
+		state = {
+		}
+
+		render = () => {
+			return (
+				<div className='Class'>
+					Class
+				</div>
+			)
+		}
+	}
+
+	export default Class
+snippet reactclass:con
+	import * as React from 'react'
+	// import className from 'classnames'
+	// import {useRouter} from 'next/router'
+	// import Link from 'next/link'
+
+	class ${0}Class extends React.Component {
+		constructor(props) {
+			super(props)
+
+			this.state = {
+			}
+		}
+
+		render() {
+			return (
+				<div className='Class'>
+					Class
+				</div>
+			)
+		}
+	}
+
+	Class.defaultProps = {
+	}
+
+	export default Class
+snippet reactclass
+	import * as React from 'react'
+	// import className from 'classnames'
+	// import {useRouter} from 'next/router'
+	// import Link from 'next/link'
+
+	const ${1:Class} = ({
+	}) => {
+		return (
+			<div className='${0:$1}'>
+				${0:$1}
+			</div>
+		)
+	}
+
+	export default ${0:$1}
+snippet ki
+	key={i}
+snippet kj
+	key={j}
+snippet tid
+	{${0:data}?.map?.((x, i) => (
+	))}
+snippet tidk
+	{[
+		{
+			label: '${0}',
+		},
+	]?.map?.((x, i) => (
+		<div
+			key={i}
+		>
+		</div>
+	))}
+snippet tidka
+	{[
+		{
+			label: '${0}',
+		},
+	]?.map?.((x, i) => (
+		<a
+			key={i}
+		>
+		</a>
+	))}
+snippet tidl
+	{[
+		{
+			dt: '',
+			dd: '',
+		},
+	]?.map?.((x, i) => (
+		<div
+			className='${1:prop}__item'
+			key={i}
+		>
+			<dt className='${0:$1}__item__dt'>{x.dt}</dt>
+			<dd className='${0:$1}__item__dd'>{x.dd}</dd>
+		</div>
+	))}
+snippet tix
+	{Array.from(Array(7))?.map?.((x, i) => (
+	))}
+snippet tif
+	{Array.from(Array(7))?.map?.((x, i) => {
+	})}
