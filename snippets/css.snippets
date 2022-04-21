@@ -21,8 +21,6 @@ snippet inputset
 	width: 100%;
 	padding: calc(var(--global-space) * .75);
 	appearance: none;
-	-moz-appearance: none;
-	-webkit-appearance: none;
 
 	&::placeholder {
 	}
@@ -246,7 +244,7 @@ snippet after
 		display: block;
 		width: ${1}px;
 		height: ${2}px;
-		background-image: url(image-path('${3}'));
+		background-image: url('/images/${3}.svg');
 		background-position: center center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -257,7 +255,7 @@ snippet before
 		display: block;
 		width: ${1}px;
 		height: ${2}px;
-		background-image: url(image-path('${3}'));
+		background-image: url('/images/${3}.svg');
 		background-position: center center;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -357,12 +355,12 @@ snippet bgset
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-image: url(image-path('${0}'));
+	background-image: url('/images/${0}.svg');
 snippet bgset2
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-image: url('app/${0}.svg');
+	background-image: url(image-path('${0}'));
 snippet bg+
 	background: #${1:FFF} url(${2}) ${3:0} ${4:0} ${0:no-repeat};
 snippet bga

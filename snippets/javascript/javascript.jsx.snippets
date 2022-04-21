@@ -947,7 +947,7 @@ snippet tid
 snippet tidk
 	{[
 		{
-			label: '${0}',
+			key: '${0}',
 		},
 	]?.map?.((x, i) => (
 		<div
@@ -982,8 +982,8 @@ snippet tidl
 		</div>
 	))}
 snippet tix
-	{Array.from(Array(7))?.map?.((x, i) => (
+	{Array.from(Array(7))?.map?.((_, i) => (
 	))}
 snippet tif
-	{Array.from(Array(7))?.map?.((x, i) => {
+	{Array.from(Array(7))?.map?.((_, i) => {
 	})}
