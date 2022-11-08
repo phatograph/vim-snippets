@@ -2,7 +2,10 @@ extends html
 
 snippet ps
 	(prevState) => {
-		${1}
+		return {
+			...prevState,
+			${1}
+		}
 	}
 snippet rLink
 	<routes.Link
