@@ -310,8 +310,16 @@ snippet smo
 	@media (max-width: $screen-mobiles) {
 		${0}
 	}
+snippet smom
+	@media (max-width: $screen-mobiles-m) {
+		${0}
+	}
 snippet smol
 	@media (max-width: $screen-mobiles-l) {
+		${0}
+	}
+snippet smoxl
+	@media (max-width: $screen-mobiles-xl) {
 		${0}
 	}
 snippet smo2
@@ -1124,8 +1132,6 @@ snippet o
 	outline: ${0};
 snippet on
 	outline: none;
-snippet ovs
-	overflow-style: ${0};
 snippet ovsa
 	overflow-style: auto;
 snippet ovsmq
@@ -1169,6 +1175,7 @@ snippet ovs
 	overflow-scrolling: touch;
 	overflow-y: auto;
 	overflow-x: hidden;
+	overscroll-behavior: contain;
 snippet toe
 	text-overflow: ellipsis;
 snippet ovv
@@ -1535,3 +1542,7 @@ snippet key
 		50% { transform: perspective(1000px) rotateY(-10deg) scale(1.025); }
 		100% { transform: perspective(3000px) rotateY(0deg) scale(1.05); }
 	}
+snippet aw
+	--app-width: ${0}px;
+snippet ap
+	--app-padding

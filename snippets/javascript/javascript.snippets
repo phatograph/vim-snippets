@@ -10,6 +10,7 @@ snippet windowHeight
 		window.innerHeight ||
 		document.documentElement.clientHeight ||
 		document.body.clientHeight
+
 snippet ok
 	${1}: ${2:''},
 snippet co
@@ -25,8 +26,7 @@ snippet =>
 	(${1}) => {
 		${0:${VISUAL}}
 	}
-snippet rand
-	~~(Math.random() * ${1:10})
+
 snippet ga
 	(get(${1:x}, '${2}') || [])
 snippet glo
@@ -47,14 +47,17 @@ snippet gs
 	get(this.state, '${1}')${2}
 snippet gp
 	get(this.props, '${1}')${2}
+
 snippet cto
 	window.clearTimeout(${0})
 snippet sto
 	window.setTimeout(() => {
 		${0}
 	}, 100)
+
 snippet pvd
 	e.preventDefault()
+
 snippet if "if (condition) { ... }"
 	if (${0}) {
 	}
@@ -66,9 +69,17 @@ snippet ife "if (condition) { ... } else { ... }"
 	}
 snippet ter
 	${1:/* condition */} ? ${2:/* if true */} : ${0:/* if false */}
+
 snippet clw
 	console.warn(${0})
 snippet cl
 	console.log(${0})
 snippet clx
-	console.log('x')
+	console.log('xxxxxxxxxxxxxxxxxxxxxxxxx')
+
+snippet for
+	for (let i = 0; i < ${1}; i++) {
+		${2}
+	}
+snippet rand
+	Math.round(Math.random() * ${1:10})

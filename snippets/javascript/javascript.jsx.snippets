@@ -1,5 +1,9 @@
 extends html
 
+snippet mo
+	motion.
+snippet rou
+	const router = useRouter()
 snippet ps
 	(prevState) => {
 		return {
@@ -773,6 +777,10 @@ snippet ac
 	>
 		${2}
 	</a>
+snippet ae
+	<a
+		className='${1}'
+	/>
 snippet ff
 	{false &&
 		<React.Fragment>
@@ -796,7 +804,7 @@ snippet tbind
 snippet reduxclass:class
 	import * as React from 'react'
 	import {connect} from 'react-redux'
-	// import className from 'classnames'
+	// import cx from 'classnames'
 
 	class ${0}Class extends React.Component {
 		static defaultProps = {
@@ -824,7 +832,7 @@ snippet reduxclass:class
 snippet reduxclass:con
 	import * as React from 'react'
 	import {connect} from 'react-redux'
-	// import className from 'classnames'
+	// import cx from 'classnames'
 
 	class ${0}Class extends React.Component {
 		constructor(props) {
@@ -853,7 +861,7 @@ snippet reduxclass:con
 snippet reduxclass
 	import * as React from 'react'
 	import {useDispatch, useMappedState} from 'redux-react-hook'
-	// import className from 'classnames'
+	// import cx from 'classnames'
 
 	import {
 		// loadUserCheckIns,
@@ -882,9 +890,9 @@ snippet reduxclass
 	export default Class
 snippet reactclass:class
 	import * as React from 'react'
-	// import className from 'classnames'
-	// import {useRouter} from 'next/router'
+	// import cx from 'classnames'
 	// import Link from 'next/link'
+	// import {useRouter} from 'next/router'
 
 	class ${0}Class extends React.Component {
 		static defaultProps = {
@@ -905,9 +913,9 @@ snippet reactclass:class
 	export default Class
 snippet reactclass:con
 	import * as React from 'react'
-	// import className from 'classnames'
-	// import {useRouter} from 'next/router'
+	// import cx from 'classnames'
 	// import Link from 'next/link'
+	// import {useRouter} from 'next/router'
 
 	class ${0}Class extends React.Component {
 		constructor(props) {
@@ -932,9 +940,9 @@ snippet reactclass:con
 	export default Class
 snippet reactclass
 	import * as React from 'react'
-	// import className from 'classnames'
-	// import {useRouter} from 'next/router'
+	// import cx from 'classnames'
 	// import Link from 'next/link'
+	// import {useRouter} from 'next/router'
 
 	const ${1:Class} = ({
 	}) => {
