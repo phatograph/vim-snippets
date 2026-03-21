@@ -1,3 +1,5 @@
+extends html
+
 snippet scrollTop
 	const scrollTop = window.pageYOffset || document.documentElement.scrollTop
 snippet windowWidth
@@ -80,7 +82,6 @@ snippet cl
 	console.log(${0})
 snippet clx
 	console.log('xxxxxxxxxxxxxxxxxxxxxxxxx')
-
 snippet for
 	for (let i = 0; i < ${1}; i++) {
 		${2}
@@ -93,5 +94,5 @@ snippet switch
 		case 'Oranges':
 			break;
 		default:
-			console.log(`Sorry, we are out of ${expr}.`);
+			console.log('');
 	}

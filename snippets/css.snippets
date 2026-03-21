@@ -1,3 +1,9 @@
+snippet an
+	anchor-name: ${0};
+snippet ac
+	anchor(${0});
+snippet pa
+	position-anchor: ${0};
 snippet ttfy
 	top: 50%;
 	transform: translateY(-50%);
@@ -132,7 +138,7 @@ snippet mix
 		${0}
 	}
 snippet inc
-	@include ${1:mixin}(${2});
+	@include ${1};
 snippet ext
 	@extend ${0};
 snippet fun
@@ -1549,7 +1555,7 @@ snippet za
 	z-index: auto;
 snippet zoo
 	zoom: 1;
-snippet :h
+snippet :ho
 	&:hover {
 		${0}
 	}
