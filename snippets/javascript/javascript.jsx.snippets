@@ -1,5 +1,13 @@
 extends html
 
+snippet rust
+	React.Dispatch<React.SetStateAction<string>>
+snippet rurt
+	React.RefObject<HTMLAnchorElement | null>
+snippet curc
+	?.current?.click?.()
+snippet match
+	match('').with('', () => null).otherwise(() => null)
 snippet icx
 	import cx from 'classnames'
 snippet ire
@@ -512,7 +520,7 @@ snippet rud
 		data: null,
 	})
 snippet rur
-	const ___${1} = React.useRef(${2})
+	const ___${1} = React.useRef<${2:HTMLAnchorElement}>(${3:null})
 snippet rus
 	const [__${1:isActive}, __${0:$1}Set] = React.useState(false)
 snippet rue
